@@ -1,0 +1,12 @@
+<perch:if id="clientOnOff" value="Yes">
+    <div class="item">
+        <a href="<perch:content id="clientURL">" target="_blank">
+            <img class="img-fluid" src="<perch:content id="clientImg">" alt="<perch:content id="clientTitle">" />
+        </a>
+    </div>
+</perch:if>
+
+<perch:content id="clientOnOff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="1">
+<perch:content id="clientTitle" type="text" label="Client/Brand Title" title  suppress="true" order="2">
+<perch:content id="clientURL" type="text" label="Client/Brand URL" title  suppress="true" order="3">
+<perch:content id="clientImg" type="image" label="Client/Brand Thumbnail" suppress="true" bucket="clients" order="6">

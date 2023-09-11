@@ -1,0 +1,20 @@
+<perch:if id="cponoff" value="On">
+
+<div class="media-box <perch:if id="cpDvc" value="Desktop">desktop-only</perch:if> <perch:if id="cpDvc" value="Mobile">mobile-only</perch:if> <perch:content id="cpFmt"> <perch:categories id="workcontent"> <perch:category id="catTitle"> </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle"> </perch:categories>" data-columns="<perch:content id="cpCol">">
+
+    <div class="media-box-image" href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">">
+        <perch:if exists="cpImg">
+            <div data-width="<perch:content id="cpWth">" data-height="<perch:content id="cpHgt">" data-thumbnail="<perch:content id="cpImg">"></div>
+        <perch:else>
+            <div data-width="300" data-height="300" data-thumbnail="noindex/imgs/work/silence-logo.png"></div>
+        </perch:if>
+        <div class="img-border"></div>
+        <div class="thumbnail-overlay" href="/ad?work=<perch:content id="ogUrl" encode="false" replace="%20|-" type="hidden">">
+            <div class="media-box-title"><perch:content id="cpMtl"></div>
+            <a href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" encode="false" replace="%20|-" type="hidden">"><i class="fa fa-link"></i></a>
+            <!--<a href="/ad/<perch:content id="ogUrl" type="hidden">"><i class="fa fa-link"></i></a>-->
+        </div>
+    </div>
+
+</div>
+</perch:if>

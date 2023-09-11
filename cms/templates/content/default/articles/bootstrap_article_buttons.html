@@ -1,0 +1,31 @@
+<perch:if id="articleonoff" value="1">
+
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+
+    <a href="<perch:content id="linkurl">" class="<perch:content id="linkclass">" style="<perch:content id="linkstyle">" target="<perch:content id="linktarget">">
+        
+        <perch:if exists="linkicon">
+            <i class="<perch:content id="linkicon">"></i>
+        </perch:if>
+            
+        <perch:content id="linktitle">
+    </a>
+
+</div>
+
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Link On/Off (Check for 'On')" value="1" suppress="true" order="1">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-12 col-lg-6" help="col-sm-12 col-lg-6 text-center text-left center mb-4 wow fadeInRightBig" suppress="true" order="2">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="3">
+</perch:group>
+        
+<perch:group label="Link Settings" collapse>
+<perch:content id="linktitle" type="text" label="Link Title" title suppress="true" order="10">
+<perch:content id="linkurl" type="text" label="Link " suppress="true" order="11">
+<perch:content id="linktarget" type="select" label="Link Target" options="_self, _blank, _parent, _top" suppress="true" order="12">
+<perch:content id="linkclass" type="text" label="Link Class" default="scroll btn fadein" help="scroll btn marg-right10 fadein" suppress="true" order="13">
+<perch:content id="linkstyle" type="text" label="Link Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="14">
+<perch:content id="linkicon" type="text" label="Icon" help="https://www.s-ings.com/typicons/ - typcn typcn-pencil, typcn typcn-device-laptop, typcn typcn-lightbulb, typcn typcn-globe" suppress="true" order="14">
+</perch:group>  

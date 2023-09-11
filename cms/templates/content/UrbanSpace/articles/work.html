@@ -1,0 +1,31 @@
+<perch:if id="cponoff" value="Yes">
+    <perch:if id="cpshow" value="Yes">
+
+    <div class="box" data-category="<perch:categories id="workcontent"> <perch:category id="catTitle"> </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle"> </perch:categories>">
+        <div data-thumbnail="<perch:content id="cpImg">"></div>
+        <div data-image="<perch:content id="cpImg">"></div>
+        <div class="thumbnail-caption"><h3><perch:content id="cpMtl"></h3></div>
+        <div class="lightbox-text"><perch:content id="cpMtl"> <span><perch:content id="cpFmt"></span></div>
+    </div>
+
+    </perch:if>
+</perch:if>
+
+
+<perch:group label="Settings" collapse>   
+<perch:content id="cponoff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="1">
+<perch:content id="cpshow" type="select" label="Show on 'Work' page" options="Yes, No" suppress="true" order="2">
+</perch:group>
+    
+<perch:group label="Title">
+<perch:content id="cpFmt" type="select" label="Format" title="true" options=" , BBL, HPA, MPU, SKY, MBL, MBS" suppress="true" order="10">
+<perch:content id="cpMtl" type="text" label="Title" title="true" suppress="true" order="11">
+<perch:content id="cpStl" type="text" label="Sub Title" suppress="true" order="12">
+<perch:content id="cpImg" type="image" label="Image" suppress="true" bucket="work" order="13">
+<perch:content id="cpTag" type="text" html="true" label="Ad Tag" html suppress="true" size="xl" order="14">
+</perch:group>
+
+<perch:group label="Categories" collapse>
+<perch:categories set="workcontent" id="workcontent" label="Categories - Content" display-as="checkboxes" suppress="true" order="20"> <perch:category id="catTitle"> </perch:categories> 
+<perch:categories set="worksectors" id="worksectors" label="Categories - Sector" display-as="checkboxes" suppress="true" order="21"> <perch:category id="catTitle"> </perch:categories>
+</perch:group>

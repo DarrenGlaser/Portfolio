@@ -1,0 +1,20 @@
+<perch:if id="cponoff" value="Yes">
+    <div id="<perch:content id="modalID">" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark-2 text-light">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-white"><perch:content id="modalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <perch:content id="modalDescription" markdown editor="markitup" textile="true" html="true">
+                </div>
+            </div>
+        </div>
+    </div>
+</perch:if>
+
+<perch:content id="cponoff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="1">
+<perch:content id="modalID" type="text" label="ID" help="div id used for the modal open/close" suppress="true" order="2">
+<perch:content id="modalTitle" type="text" label="Title" title  suppress="true" order="3">
+<perch:content id="modalDescription" type="textarea" label="Text" markdown editor="markitup" textile="true" html="true" suppress="true" order="4">

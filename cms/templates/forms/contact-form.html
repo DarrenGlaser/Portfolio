@@ -1,0 +1,22 @@
+<perch:form id="contact-form" class="form-dark contact-form needs-validation" app="perch_forms">
+
+    <div class="row g-4">
+        <div class="col-xl-6" style="background-color: transparent!important;">
+            <perch:input id="name" class="form-control name" type="text" name="name" label="Name" placeholder="Name" value="" required>
+        </div>
+        <perch:input id="middlename" class="middlename" type="text" name="middlename" label="Middle Name" placeholder="Middle Name" value="" antispam="honeypot">
+        <div class="col-xl-6" style="background-color: transparent!important;">
+            <perch:input id="email" class="form-control email" type="email" name="email" label="Email" placeholder="Email Address" value="" required>
+        </div>
+        <div class="col" style="background-color: transparent!important;">
+            <perch:input id="enquiry" class="form-control enquiry" type="textarea" name="message" cols="30" rows="5" label="Enquiry" placeholder="Tell us more about your needs........" value="" required>
+        </div>
+    </div>
+
+    <p class="text-center mt-4 mb-0">
+        <perch:input id="submit" class="btn btn-primary rounded-pill d-inline-flex" type="submit" value="submit">
+    </p>
+
+    <perch:input id="getipadr" class="getipadr" label="IP Address" type="hidden" required value="">
+
+</perch:form>

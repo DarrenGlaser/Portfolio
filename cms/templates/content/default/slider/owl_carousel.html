@@ -1,0 +1,22 @@
+<perch:before>
+    <section id="<perch:content id="sectionid" type="text" label="Section ID" default="carousel" help="carousel-members" order="2">">
+    <perch:if exists="heading">
+        <div class="<perch:content id="colclass" type="text" label="Column Class" default="text-center col-md-12 mb-4" help="text-center col-md-12 mb-4" order="3">">
+        <<perch:content id="headingtype" type="select" label="Heading Type" default="h2" options=" , h1, h2, h3, h4, h5, h6" help="h1, h2, h3, h4, h5, h6" order="4"> class="text-center fadein"><perch:content id="heading" type="text" label="Heading" markdown editor="simplemde" html="true" order="5"></<perch:content id="headingtype">>
+        </div>
+    </perch:if>
+    <div id="<perch:content id="carouselid" type="text" label="Carousel ID" order="6">" class="<perch:content id="carouselclass" type="text" label="Carousel Class" default="owl-carousel owl-theme" help="owl-carousel owl-theme" order="7">">
+</perch:before>
+<perch:repeater id="carousel" label="Carousel" max="30">
+    <perch:content id="itemorder" type="select" label="Item Order" options="<perch:template path="content/lists/numbers-1-100.html">" help="pick a number to order by" suppress order="12" divider-before="------------Member------------">
+    <div class="item fbri t">
+        <a href="<perch:content id="link" type="text" label="Link (Global URL)" order="9">" title="<perch:content id="linktitle" type="text" label="Title" order="8"> - <perch:content id="alt">">
+        <img src="<perch:content id="image" type="image" label="Image" order="10">" alt="<perch:content id="alt" type="text" label="Description" order="11">">
+            </a>
+    </div>
+
+</perch:repeater>
+<perch:after>
+    </div>
+    </section>
+</perch:after>

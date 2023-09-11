@@ -1,0 +1,33 @@
+<perch:if id="articleonoff" value="1">
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+
+        <perch:if exists="clink">
+            <a class="<perch:content id="clinkclass">" href="<perch:content id="clink">" target="<perch:content id="clinktarget">" title="<perch:content id="ctitle">">
+        </perch:if>    
+                
+            <img class="<perch:content id="cimageclass">" src="<perch:content id="cimage">" alt="<perch:content id="ctitle">" />
+                
+        <perch:if exists="clink">    
+        </a>
+        </perch:if>
+    
+</div>
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Article On/Off (Check for 'On')" value="1" divider-before="Bootstrap Settings" suppress="true" order="1">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-4 col-lg-4 text-center" help="col-sm-4 col-lg-4 text-center text-left center mb-4 wow fadeInRightBig" suppress="true" order="10">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="11">
+</perch:group>
+        
+<perch:group label="Title Settings" collapse>
+<perch:content id="ctitle" type="text" label="Title" title divider-before="Title Settings" suppress="true" order="31">
+<perch:content id="clinkclass" type="text" label="A Class" default="client-link" help="client-link" suppress="true" order="32">
+<perch:content id="clink" type="text" label="Link" help="URL" suppress="true" order="33">
+<perch:content id="clinktarget" type="select" label="Link Target" options="_self, _blank, _parent, _top" suppress="true" order="34">
+</perch:group>
+
+<perch:group label="Image Settings" collapse>
+<perch:content id="cimage" type="image" label="Client Image" bucket="clients" divider-before="Image Settings" suppress="true" order="40">
+<perch:content id="cimageclass" type="text" label="Text Div Style" default="client-img fgra t" help="client-img fgra t" suppress="true" order="41"> 
+</perch:group>

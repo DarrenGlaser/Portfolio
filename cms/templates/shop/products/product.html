@@ -1,0 +1,72 @@
+<!--
+<perch:shop id="status" type="shop_status" label="Status" order="1" />
+<perch:shop id="catalog_only" type="shop_catalog_only" label="Catalog only" order="2" />
+<perch:shop id="cpMtl" type="text" label="Title" required="true" order="3" />
+<perch:shop id="sku" type="text" label="SKU" required="true" order="4" />
+<perch:shop id="slug" type="slug" editable="true" indelible="true" label="Slug" for="cpMtl sku" order="5" />
+<perch:shop id="cpDat" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ" suppress="true" order="6" />
+<perch:shop id="cpCdt" type="date" label="Created Date" format="d-m-Y" suppress="true" order="7" />
+
+<perch:shop id="cpShow" type="select" label="Show on 'Home' page" options="No, Yes" order="10">
+<perch:shop id="cpDvc" type="select" label="Show on Device" options="Desktop Only|Desktop, Mobile Only|Mobile, Both|Both" help="'Lightbox' ads should be 'Desktop Only'. MPU & HPA 'Display' or 'InPage' ads can be 'Mobile Only' or 'Both'" suppress="true" order="11" />
+<perch:shop id="cpFmt" type="select" label="Main Page Format" options="Page, BBL, HPA, MPU, SKY, MBL, MBS" suppress="true" order="12" />
+<perch:shop id="cpCol" type="select" label="Mediabox Columns" options="1, 2, 3, 4" suppress="true" order="13" />
+
+<perch:shop id="cpStl" type="textarea" label="Home Excerpt" editor="markitup" markdown="true" size="s" order="20" />
+<perch:shop id="cpDes" type="textarea" label="Detailed Description" editor="markitup" markdown="true" size="s" order="21" />
+
+<perch:shop id="cpImg" type="image" label="Thumbnail Image" suppress="true" bucket="work" density="1.6" order="30" />
+<perch:shop id="cpWth" type="text" label="Thumbnail Img Width" suppress="true" order="31" />
+<perch:shop id="cpHgt" type="text" label="Thumbnail Img Height" suppress="true" order="32" />
+
+<perch:shop id="cpTyp" type="select" label="Type of Content to load" options="Direct Content|DirectContent, Fancybox iFrame|FancyboxiFrame, External Link|ExternalLink" help="Direct Link - Puts the content straight on the page, " suppress="true" order="40" />
+<perch:shop id="cpDimg" type="image" label="Detailed Image" suppress="true" bucket="work" order="41">
+<perch:shop id="ifCont" type="text" label="Content - URL" html="true" help="Internal or external (may cause issues)" suppress="true" order="42" />
+<perch:shop id="cpTag" type="text" label="Ad Tag" html="true" help="" suppress="true" size="xxl" order="43" />
+
+<perch:shop id="brand" type="shop_brand" label="Brand" allowempty="true" order="50" />
+
+<perch:group label="Categories" collapse>
+	<perch:categories set="workcontent" id="workcontent" label="Categories - Content" display-as="checkboxes">
+		<perch:category id="catTitle">
+	</perch:categories>
+	<perch:categories set="worksectors" id="worksectors" label="Categories - Sector" display-as="checkboxes">
+		<perch:category id="catTitle">
+	</perch:categories>
+	<perch:categories set="workformat" id="workformat" label="Format - Format" display-as="checkboxes">
+		<perch:category id="catTitle" />
+	</perch:categories>
+</perch:group>
+
+<perch:group label="Social Sharing" collapse>
+<perch:shop id="ogTyp" type="select" label="Share Type" options="article,book,profile,website,video,music" default="article" suppress="true" />
+<perch:shop id="ogTtl" type="text" label="Share Title" encode="false" suppress="true" />
+<perch:shop id="ogDes" type="textarea" label="Share Description" html="false" editor="markitup" markdown suppress="true" />
+<perch:shop id="ogImg" type="image" label="Share Image" bucket="share" width="1200" help="Should be at least 1200x630" suppress="true" />
+<perch:categories set="sharesites" id="sharesites" label="Share On" display-as="checkboxes" suppress="true" /><perch:category id="catTitle"></perch:categories>
+<perch:shop id="ogAth" type="text" label="Article Author" suppress="true" default="Darren Glaser" />
+</perch:group>
+
+<perch:group label="Pricing" collapse>
+<perch:shop id="price" type="shop_currency_value" label="Price" size="s" min="0" step="any" />
+<perch:shop id="sale_price" type="shop_currency_value" label="Sale price" size="s" min="0" step="any" />
+<perch:shop id="trade_price" type="shop_currency_value" label="Trade price" size="s" min="0" step="any" runway="true" />
+<perch:shop id="on_sale" type="checkbox" value="1" label="Use sale price" />
+<perch:shop id="tax_group" type="shop_tax_group" label="Tax group" required="true" />
+</perch:group>
+
+<perch:group label="Stock" collapse>
+<perch:shop id="stock_status" type="shop_stock_status" label="Stock status" required="true" />
+<perch:shop id="stock_level" type="number" label="Stock level" size="s" />
+<perch:shop id="stock_location" type="shop_stock_location" label="Count stock" />
+<perch:shop id="max_in_cart" type="number" label="Max quantity in cart" size="s" />
+</perch:group>
+
+<perch:group label="Shipping" collapse>
+<perch:shop id="requires_shipping" type="shop_requires_shipping" label="Requires shipping" />
+<perch:shop id="weight" type="number" label="Shipping weight" size="s" />
+<perch:shop id="width" type="number" label="Width" size="s" />
+<perch:shop id="height" type="number" label="Height" size="s" />
+<perch:shop id="depth" type="number" label="Depth" size="s" />
+</perch:group>
+-->

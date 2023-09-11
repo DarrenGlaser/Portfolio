@@ -1,0 +1,23 @@
+<perch:if id="eventOnOff" value="On">
+<div class="media-box">
+
+    <a class="media-box-image" href="/event?evUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">">
+        <perch:if exists="image">
+            <div data-width="480" data-height="480" data-thumbnail="<perch:content id="image">"><div class="imgborder"></div></div>
+            <perch:else>
+                <div data-width="480" data-height="480" data-thumbnail="noindex/imgs/work/silence-logo.png"></div>
+        </perch:if>
+
+        <a class="thumbnail-overlay" href="/event?evUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">" title="<perch:content id="title">">
+            <div class="media-box-title"><perch:content id="title"></div>
+        </a>
+
+    </a>
+
+    <div class="media-box-content">
+        <div class="media-box-title data-src="/event?evUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">"><perch:content id="title" chars="20" append="..."></div>
+        <div class="media-box-text"><perch:content id="textbody" striptags="true" chars="90" append="..." html="false"></div>
+    </div>
+
+</div>
+</perch:if>

@@ -1,0 +1,9 @@
+<perch:pages id="bodyid" label="PageID" help="Select the ID for the body tag" type="text" suppress="true">
+<perch:pages id="bodyclass" label="PageClass" help="Select the Class for the body tag (usually taken from the template)" type="text" suppress="true">
+<perch:pages id="websitetheme" label="WebsiteTheme" help="Select a theme" type="select" options="<perch:template path="content/lists/themes.html">" suppress="true">
+
+<perch:template path="pages/attributes/seo.html">
+<perch:template path="pages/attributes/facebook.html">
+<perch:template path="pages/attributes/twitter.html">
+
+<link rel="canonical" href="<perch:pages id="url" type="hidden" encode="false" replace="%20|-">" />

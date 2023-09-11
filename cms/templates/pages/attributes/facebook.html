@@ -1,0 +1,17 @@
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="<perch:pages id="og_type" label="Facebook Type" type="select" options="article,book,profile,website,video,music" allowempty>" />
+<meta property="og:title" content="<perch:pages id="og_title" label="Social Title" type="text" escape help="Title for this document with no branding or site name" divider-before="Facebook Open Graph Tags">" />
+<meta property="og:description" content="<perch:pages id="og_description" label="Social description" type="textarea" size="s" escape>" />
+<meta property="og:url" content="<perch:pages id="url" type="hidden" encode="false" replace="%20|-">" />
+<meta property="og:site_name" content="<perch:pages id="sitename" type="hidden">" />
+<perch:if exists="og_image"><meta property="og:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="og_image" label="Image when shared" help="Should be at least 1200x630" type="image" width="1200">" /><perch:else><meta property="og:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="sharing_image" type="hidden">" /></perch:if>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<perch:if exists="og_datetime"><meta property="og:publish_date" name="publish_date" content="<perch:pages id="og_datetime" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ">" />
+<meta property="article:published_time" name="article-published_time" content="<perch:pages id="og_datetime" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ">" />
+<meta property="article:modified_time" name="article-modified_time" content="<perch:pages id="og_datetime" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ">" /><perch:else><meta property="og:publish_date" name="publish_date" content="<perch:pages id="article_datetime" time  type="hidden" format="Y-m-d\TH:i:s\.TZ">" />
+<meta property="article:published_time" name="article-published_time" content="<perch:pages id="article_datetime" time  type="hidden" format="Y-m-d\TH:i:s\.TZ">" />
+<meta property="article:modified_time" name="article-modified_time" content="<perch:pages id="article_datetime" time  type="hidden" format="Y-m-d\TH:i:s\.TZ">" /></perch:if>
+<meta property="article:publisher" content="<perch:pages id="facebookurl" type="hidden">" />
+<meta property="article:author" content="<perch:pages id="og_author" label="Article Author" type="text">" />
+

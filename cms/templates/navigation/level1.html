@@ -1,0 +1,4 @@
+<li class="nav-item <perch:if exists="subitems">dropdown</perch:if> <perch:if exists="current_page">active</perch:if>">
+    <a class="nav-link <perch:if exists="subitems">dropdown-toggle</perch:if> <perch:if exists="current_page">active</perch:if>" <perch:if exists="subitems">data-bs-toggle="dropdown"</perch:if> href="<perch:pages id="pagePath">"><perch:pages id="pageNavText"></a>
+    <perch:pages id="subitems" encode="false" />
+</li>

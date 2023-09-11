@@ -1,0 +1,70 @@
+<perch:if id="cponoff" value="On">
+<div class="media-box <perch:if id="cpDvc" value="Desktop">desktop-only</perch:if> <perch:if id="cpDvc" value="Mobile">mobile-only</perch:if> <perch:content id="cpFmt"> <perch:categories id="workcontent"> <perch:category id="catTitle"> </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle"> </perch:categories>" data-columns="<perch:content id="cpCol">">
+
+    <a class="media-box-image" href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">">
+        <perch:if exists="cpImg">
+            <div data-width="<perch:content id="cpWth">" data-height="<perch:content id="cpHgt">" data-thumbnail="<perch:content id="cpImg">"></div>
+        <perch:else>
+            <div data-width="<perch:content id="cpWth">" data-height="<perch:content id="cpHgt">" data-thumbnail="noindex/imgs/work/silence-logo.png"></div>
+        </perch:if>
+
+        <div class="thumbnail-overlay" href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" encode="false" replace="%20|-" type="hidden">" title="<perch:content id="cpMtl">">
+            <div class="media-box-title"><perch:content id="cpMtl"></div>
+
+            <i class="fa fa-plus mb-open-popup" data-src="gallery/img-24.jpg" data-title="Dolor in reprehenderit"></i>
+            <a href="#"><i class="fa fa-link"></i></a>
+        </div>
+    </a>
+
+    <perch:if exists="cpStl">
+        <div class="media-box-content">
+            <div class="media-box-title"><perch:content id="cpMtl"></div>
+            <div class="media-box-text"><perch:content id="cpStl"></div>
+            <div class="media-box-more"> <a href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">">Read more</a></div>
+                </div>
+                <div class="media-box-footer"><perch:categories id="workcontent"> <perch:category id="catTitle">, </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle">, </perch:categories></div>
+    </perch:if>
+
+</div>
+</perch:if>
+
+
+<perch:content id="_id" type="hidden" suppress="true" order="1">
+<perch:content id="cpDat" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ" suppress="true" order="2">
+<perch:content id="cpCdt" type="date" label="Created Date" format="d-m-Y" suppress="true" order="3">
+<perch:content id="cponoff" type="select" label="Item On/Off" options="On, Off" suppress="true" order="4">
+<perch:content id="cpshow" type="select" label="Show on 'Home' page" options="Yes, No" default="No" suppress="true" order="5">
+<perch:content id="cpDvc" type="select" label="Show on Device" options="Desktop Only|Desktop, Mobile Only|Mobile, Both|Both" help="'Lightbox' ads should be 'Desktop Only'. MPU & HPA 'Display' or 'InPage' ads can be 'Mobile Only' or 'Both'" suppress="true" order="6">
+<perch:content id="cpFmt" type="select" label="Main Page Format" options="Page, BBL, HPA, MPU, SKY, MBL, MBS" suppress="true" order="7">
+<perch:content id="cpCol" type="select" label="Mediabox Columns" options="1, 2, 3, 4" suppress="true" order="8">
+
+<perch:content id="cpClt" type="text" label="Client" suppress="true" order="9">
+<perch:content id="cpMtl" type="text" label="Main Title" required suppress="true" order="10">
+<perch:content id="ogUrl" type="text" label="This Page URL" encode="false" replace="%20|-" help="Usually the 'Home Title' hyphenated" required suppress="true" order="11">
+<perch:content id="cpLtl" type="text" label="List Title" title="true" suppress="true" order="12">
+<perch:content id="cpStl" type="text" label="Home Description" html="true" help="If you fill this out the content and footer will display" suppress="true" size="xxl" order="13">
+<perch:content id="cpDes" type="textarea" label="Detailed Description" html="false" editor="markitup" markdown suppress="true" order="14">
+
+<perch:content id="cpImg" type="image" label="Thumbnail Image" suppress="true" bucket="work" order="15">
+<perch:content id="cpWth" type="text" label="Thumbnail Img Width" suppress="true" order="16">
+<perch:content id="cpHgt" type="text" label="Thumbnail Img Height" suppress="true" order="17">
+
+<!-- Fancybox - Image - iFrame HTML Content -->
+<perch:content id="cpTyp" type="select" label="Type of Content to load" options="Direct Content|DirectContent, Fancybox iFrame|FancyboxiFrame, External Link|ExternalLink" help="Direct Link - Puts the content straight on the page, " suppress="true" order="18">
+<perch:content id="cpDimg" type="image" label="Detailed Image" suppress="true" bucket="work" order="19">
+<perch:content id="ifCont" type="text" label="Content - URL" html="true" help="Internal or external (may cause issues)" suppress="true" order="20">
+<perch:content id="cpTag" type="text" label="Ad Tag" html="true" help="" suppress="true" size="xxl" order="21">
+
+<perch:group label="Categories" collapse>
+<perch:categories set="workcontent" id="workcontent" label="Categories - Content" display-as="checkboxes" required suppress="true" order="30"> <perch:category id="catTitle"> </perch:categories>
+<perch:categories set="worksectors" id="worksectors" label="Categories - Sector" display-as="checkboxes" required suppress="true" order="31"> <perch:category id="catTitle"> </perch:categories>
+</perch:group>
+
+<perch:group label="Social Sharing" collapse>
+<perch:content id="ogTyp" type="select" label="Share Type" options="article,book,profile,website,video,music" default="article" suppress="true" order="41">
+<perch:content id="ogTtl" type="text" label="Share Title" encode="false" suppress="true" order="42">
+<perch:content id="ogDes" type="textarea" label="Share Description" html="false" editor="markitup" markdown suppress="true" order="43">
+<perch:content id="ogImg" type="image" label="Share Image" bucket="share" width="1200" help="Should be at least 1200x630" suppress="true" order="44">
+<perch:categories set="sharesites" id="sharesites" label="Share On" display-as="checkboxes" suppress="true" order="45"> <perch:category id="catTitle"> </perch:categories>
+<perch:content id="ogAth" type="text" label="Article Author" suppress="true" default="Darren Glaser" order="46">
+</perch:group>

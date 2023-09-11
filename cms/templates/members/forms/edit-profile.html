@@ -1,0 +1,132 @@
+<perch:form id="profile" class="row mb-0" method="post" app="perch_members">
+   
+<div class="col-md-4">
+    <div class="form-row">
+        <img class="img-fluid img-thumbnail" src="<perch:members id="avatar">">
+        <!--<perch:input id="avatar" type="file" label="Avatar" bucket="members" />-->
+        
+        <div class="col-md-12 mb-3">
+		    <perch:label for="last_name">Avatar Description</perch:label>
+            <perch:input id="alt" class="form-control" type="text" label="Avatar Description" />
+	    </div>
+    </div>
+    
+    <h5 class="mt-4"><i class="line-icon icon-linepencil marg-right5"></i>Skills</h5>  
+    <h6 class="left"><b>BALL CONTROL</b></h6>
+    <perch:input id="ballcon" class="form-control" type="select" label="Skill 1" options="<perch:template path="content/lists/numbers-1-100.html">" help="pick a percentage" />
+
+    <h6 class="left"><b>FITNESS</b></h6>
+    <perch:input id="fitness" class="form-control" type="select" label="Skill 2" options="<perch:template path="content/lists/numbers-1-100.html">" help="pick a percentage" />   
+
+    <h6 class="left"><b>ENTHUSIASM</b></h6>
+    <perch:input id="enthusi" class="form-control" type="select" label="Skill 3" options="<perch:template path="content/lists/numbers-1-100.html">" help="pick a percentage" />
+</div>
+    
+
+<div class="col-md-8 float-right">
+    
+    <h5>Biography</h5>
+    <div class="form-row profile-biography border-bottom pb-3 mb-4">
+        <div class="col-md-12 mb-3">
+            <perch:input id="biography" class="form-control" type="textarea" label="Biography">
+        </div>
+    </div>
+
+
+    <h5>Personal Details:</h5>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+		    <perch:label for="first_name">First Name</perch:label>
+            <perch:input id="first_name" class="form-control" type="text" label="First Name" placeholder="First Name">
+	    </div>
+
+        <div class="col-md-6 mb-3">
+		    <perch:label for="last_name">Last Name</perch:label>
+            <perch:input id="last_name" class="form-control" type="text" label="Last Name" placeholder="Last Name">
+	    </div>
+    </div>
+    <div class="form-row border-bottom pb-3 mb-4">
+        <div class="col-md-6 mb-3">
+            <perch:label for="number">Mobile</perch:label>
+            <perch:input id="number" class="form-control" type="text" label="Number" placeholder="Number">
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <perch:label for="email">Your Email</perch:label>
+            <perch:input id="email" class="form-control" type="email" label="Email" placeholder="Email">
+        </div>
+    </div>
+
+
+    <h5>Squash Details:</h5>
+    <div class="form-row border-bottom pb-3 mb-4">
+        <div class="col-md-3 mb-3">
+            <perch:label for="number">Team</perch:label>
+            <perch:input id="pteam" class="form-control" type="select" label="Team" options=" , 1, 2, 3, 4">
+        </div>
+        <div class="col-md-3 mb-3">
+            <perch:label for="number">Ranking</perch:label>
+            <perch:input id="esranking" class="form-control" type="text" label="England Squash Ranking" listing="true">
+        </div>
+        <div class="col-md-3 mb-3">
+            <perch:label for="number">England Squash ID</perch:label>
+            <perch:input id="esid" class="form-control" type="text" label="England Squash ID" listing="true">
+        </div>
+        <div class="col-md-3 mb-3">
+            <perch:label for="email">Northwest Counties ID</perch:label>
+            <perch:input id="ncid" class="form-control" type="text" label="Northwest Counties ID" listing="true">
+        </div>
+    </div>
+
+
+
+    <div class="profile-social border-bottom pb-3 mb-4">
+        <h5>Social Sites:</h5>
+            
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <perch:label for="number">Twitter Link (URL)</perch:label>
+                <perch:input id="twitterurl" class="form-control" type="text" label="Twitter Link (URL)">
+            </div>
+            <div class="col-md-4 mb-3">
+                <perch:label for="number">Facebook Link (URL)</perch:label>
+                <perch:input id="facebookurl" class="form-control" type="text" label="Facebook Link (URL)">
+            </div>
+            <div class="col-md-4 mb-3">
+                <perch:label for="number">Instagram Link (URL)</perch:label>
+                <perch:input id="instagramurl" class="form-control" type="text" label="Instagram Link (URL)">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <perch:label for="number">LinkedIn Link (URL)</perch:label>
+                <perch:input id="linkedinurl" class="form-control" type="text" label="LinkedIn Link (URL)">
+            </div>
+            <div class="col-md-4 mb-3">
+                <perch:label for="number">Pinterest Link (URL)</perch:label>
+                <perch:input id="pinteresturl" class="form-control" type="text" label="Pinterest Link (URL)">
+            </div>
+            <div class="col-md-4 mb-3">
+                <perch:label for="number">Dribble Link (URL)</perch:label>
+                <perch:input id="dribbleurl" class="form-control" type="text" label="Dribble Link (URL)">
+            </div>
+        </div>
+        
+    </div>
+
+    
+    <perch:input id="submit" class="btn btn-primary float-right hover-left" type="submit" value="UPDATE DETAILS">
+    <perch:input type="hidden" id="token">
+                
+    <div class="profile-ranking border-bottom pb-3 mb-4">
+        <h5>Fixtures: 
+            <span class="text-primary"><a class="btn badge-primary" href="/fixtures-listing?t<perch:members id="pteam">Fix=<perch:members id="pteam">"><i class="far fa-file-alt"></i> List</a></span> 
+            <span class="text-primary"><a class="btn btn-primary" href="/fixtures-calendar?t<perch:members id="pteam">Fix=<perch:members id="pteam">"><i class="fas fa-calendar-alt"></i> Calendar</a></span>
+        </h5>
+    </div>
+        
+    
+</div>
+   
+</perch:form>

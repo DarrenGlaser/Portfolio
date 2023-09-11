@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} www.darrenglaser.co.uk
+RewriteRule (.*) https://darrenglaser.co.uk/$1 [R=301,L]
+
+
+# Perch Runway
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /cms/core/runway/start.php [L]
+
+# Remove once done
+ExpiresActive On
+ExpiresDefault A1
+Header append Cache-Control must-revalidate

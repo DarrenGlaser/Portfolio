@@ -1,0 +1,129 @@
+<!-- REVOLUTION JS FILES -->
+<script type="text/javascript" src="/noindex/default/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS -->	
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="/noindex/default/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+<!-- END REVOLUTION SLIDER -->
+<script type="text/javascript">
+var tpj=jQuery;
+var revapi1078;
+tpj(document).ready(function() {
+    if(tpj("#rev_slider_sm").revolution == undefined){
+        revslider_showDoubleJqueryError("#rev_slider_sm");
+    } else {
+        revapi1078 = tpj("#rev_slider_sm").show().revolution({
+            spinner:"spinner5",
+            autoHeight:"off",
+            sliderType:"standard",
+            lazyType: "smart",
+            jsFileLocation:"/noindex/default/revolution/js/",
+            sliderLayout:'<perch:content id="slidestyle">',
+            dottedOverlay:"none",
+            delay:<perch:content id="delay">,
+            navigation: {
+                keyboardNavigation:"off",
+                keyboard_direction: "horizontal",
+                mouseScrollNavigation:"off",
+                mouseScrollReverse:"default",
+                onHoverStop:"off",
+                touch:{
+                    touchenabled:"on",
+                    swipe_threshold: 75,
+                    swipe_min_touches: 1,
+                    swipe_direction: "horizontal",
+                    drag_block_vertical: false
+                },
+				arrows: {
+                    enable:<perch:content id="arrows">,
+                    style:"<perch:content id="arrowstyle">",
+				    hide_onmobile:true,
+				    hide_under:600,
+				    hide_onleave:true,
+				    hide_delay:200,
+				    hide_delay_mobile:1200,
+				    left: {
+				        h_align:"left",
+				        v_align:"center",
+				        h_offset:30,
+				        v_offset:0
+				    },
+				    right: {
+				        h_align:"right",
+				        v_align:"center",
+				        h_offset:30,
+				        v_offset:0
+				    }
+				},
+				bullets: {
+                    enable:<perch:content id="bullets">,
+                    style:"<perch:content id="bullettyle">",
+				    hide_onmobile:true,
+				    hide_under:600,
+				    hide_onleave:true,
+				    hide_delay:200,
+				    hide_delay_mobile:1200,
+				    direction:"horizontal",
+				    h_align:"center",
+				    v_align:"bottom",
+				    h_offset:0,
+				    v_offset:30,
+				    space:5,
+                    tmp:'<span class="tp-bullet-img-wrap">  <span class="tp-bullet-image"></span></span><span class="tp-bullet-title">{{title}}</span>'
+				}
+            },
+            viewPort: {
+				enable:true,
+				outof:"pause",
+				visible_area:"80%",
+				presize:false
+            },
+            responsiveLevels:[1240,1024,778,480],
+            visibilityLevels:[1240,1024,778,480],
+            gridwidth:[1240,1024,778,480],
+            gridheight:[<perch:content id="gridheight">],
+            parallax: {
+                type:"mouse",
+                origo:"slidercenter",
+                speed:2000,
+                levels:[2,3,4,5,6,7,12,16,10,50,47,48,49,50,51,55],
+                type:"mouse",
+            },
+            shadow:0,
+            stopLoop:"off",
+            stopAfterLoops:-1,
+            stopAtSlide:-1,
+            shuffle:"off",
+            hideThumbsOnMobile:"off",
+            hideSliderAtLimit:0,
+            hideCaptionAtLimit:0,
+            hideAllCaptionAtLilmit:0,
+            debugMode:false,
+            fallbacks: {
+                simplifyAll:"off",
+                nextSlideOnWindowFocus:"off",
+                disableFocusListener:false,
+            }
+        });
+    }
+});
+</script>
+<perch:content id="delay" type="text" label="Slide Duration" help="Time in miliseconds i.e. 5500" default="9000" suppress="true" order="1" />
+<perch:content id="gridheight" type="text" label="Slider Heights" help="Grid heights i.e. 400,360,200,260" default="400,360,200,260" suppress="true" order="2" />
+
+<perch:content id="arrows" type="select" label="Arrows Enabled" default="false" options="Off|false, On|true" suppress="true" order="12" />
+<perch:content id="arrowstyle" type="select" label="Arrow Style" default="gyges" options="Hesperiden|hesperiden, Gyges|gyges, Hades|hades, Ares|ares, Hebe|hebe, Hermes|hermes, Hephaistos|hephaistos, Persephone|persephone, Erinyen|erinyen, Zeus|zeus, Metis|metis, Dione|dione, Uranus|uranus" suppress="true" order="13" />
+
+<perch:content id="bullets" type="select" label="Bullet Enabled" default="false" options="Off|false, On|true" suppress="true" order="14" />
+<perch:content id="bullettyle" type="select" label="Bullet style" default="metis" options="Hesperiden|hesperiden, Gyges|gyges, Hades|hades, Ares|ares, Hebe|hebe, Hermes|hermes, Hephaistos|hephaistos, Persephone|persephone, Erinyen|erinyen, Zeus|zeus, Metis|metis, Dione|dione, Uranus|uranus" suppress="true" order="15" />
+
+<perch:content id="slidestyle" type="select" label="Slider Style" help="auto, standard, fullscreen, fullwidth" options="auto|auto, standard|standard, fullscreen|fullscreen, fullwidth|fullwidth" suppress="true" order="16" />

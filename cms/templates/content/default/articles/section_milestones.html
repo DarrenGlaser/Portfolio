@@ -1,0 +1,38 @@
+<perch:if id="articleonoff" value="1">
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+    <div class="counter bouncein">
+        <div id="counter-<perch:content id="itemid">"></div>
+        <p class="light"><perch:content id="milestonetitle"></p>
+    </div>
+</div>
+
+<script type="text/javascript">        
+$(document).ready(function () {        
+    jQuery('#counter-<perch:content id="itemid">').appear(function() {
+        $('#counter-<perch:content id="itemid">').countTo({
+            from: <perch:content id="fromno">,
+            to: <perch:content id="tono">,
+            speed: 4000,
+            refreshInterval: 50,
+            onComplete: function(value) { 
+                //console.debug(this); 
+            }
+        });
+    });
+});       
+</script>  
+
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Milestone On/Off (Check for 'On')" value="1" suppress="true" order="10">
+<perch:content id="itemid" type="select" label="Item ID" options=" , 1, 2, 3, 4, 5, 6, 7, 8, 9" suppress="true" order="11">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-4 col-lg-4 text-center" help="col-sm-4 col-lg-4 text-center bouncein" suppress="true" order="12">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="13">
+</perch:group>
+    
+<perch:group label="Milestone Settings" collapse>
+<perch:content id="milestonetitle" type="text" label="Title" title suppress="true" order="20">
+<perch:content id="fromno" type="text" label="From Number" help="0" suppress="true" order="21">
+<perch:content id="tono" type="text" label="To Number" help="0" suppress="true" order="22">
+</perch:group>

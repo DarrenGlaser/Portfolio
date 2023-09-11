@@ -1,0 +1,22 @@
+<perch:if id="cponoff" value="On">
+
+<div class="cbp-item <perch:if id="cpDvc" value="Desktop">desktop-only</perch:if> <perch:if id="cpDvc" value="Mobile">mobile-only</perch:if> <perch:content id="cpFmt"> <perch:categories id="workcontent"> <perch:category id="catTitle"> </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle"> </perch:categories>">
+
+    <a href="/adjx?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">" class="cbp-caption cbp-singlePage" data-title="<perch:content id="cpMtl"><br><perch:content id="cpStl">">
+        <div class="cbp-caption-defaultWrap"> <img src="<perch:content id="cpImg">" alt="<perch:content id="cpMtl">"> </div>
+        <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-title"><perch:content id="cpFmt"></div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="/adjx?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">" class="cbp-l-grid-work-title work-desc t" rel="nofollow">
+        <perch:content id="cpLtl">
+    </a>
+
+</div>
+
+</perch:if>

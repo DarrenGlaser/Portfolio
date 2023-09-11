@@ -1,0 +1,22 @@
+<perch:if id="articleonoff" value="1">
+
+    <perch:if exists="titletype">
+        <<perch:content id="titletype"> class="sectitle <perch:content id="titleclass">"><perch:content id="title"></<perch:content id="titletype">>
+    </perch:if>
+
+    <perch:if exists="textbody">
+        <perch:content id="textbody" markdown editor="markitup" textile="true" html="true">
+    </perch:if>
+
+
+</perch:if>
+
+
+<perch:content id="articleonoff" type="checkbox" label="Article On/Off (Check for 'On')" value="1" suppress="true" order="1">
+
+<perch:content id="titletype" type="select" label="Title Type" options=" , h1, h2, h3, h4, h5, h6, p, span" help="h1, h2, h3, h4, h5, h6, p, span" suppress="true" order="2">
+<perch:content id="titleclass" type="text" label="Title Class" help="text-left, text-center" suppress="true" order="3">
+<perch:content id="title" type="text" label="Title" title suppress="true" order="4">
+
+<perch:content id="textbody" type="textarea" label="Body Text" markdown editor="markitup" textile="true" html="true" suppress="true" order="10">
+

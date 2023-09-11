@@ -1,0 +1,39 @@
+<perch:if id="cponoff" value="On">
+
+    <div class="cbp-item <perch:if id="cpDvc" value="Desktop">desktop-only</perch:if> <perch:if id="cpDvc" value="Mobile">mobile-only</perch:if> <perch:categories id="workcontent"> <perch:category id="catTitle"> </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle"> </perch:categories>">
+        <a href="/ad?cpUid=<perch:content id="_id" type="hidden">&cpMtl=<perch:content id="cpMtl">&cpFmt=<perch:content id="cpFmt">" class="cbp-caption" data-title="<perch:content id="cpMtl"><br><perch:content id="cpStl">">
+            <div class="cbp-caption-defaultWrap"> <img src="<perch:content id="cpImg">" alt="<perch:content id="cpMtl">"> </div>
+            <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                    <div class="cbp-l-caption-body">
+                        <div class="cbp-l-caption-title"><perch:content id="cpLtl"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="/ad?cpUid=<perch:content id="_id" type="hidden">&cpMtl=<perch:content id="cpMtl">&cpFmt=<perch:content id="cpFmt">" class="cbp-l-grid-work-title cbp-singlePage work-title" rel="nofollow">
+        <perch:content id="cpMtl">
+        </a>
+    </div>
+
+</perch:if>
+
+<perch:group label="Settings">
+<perch:content id="_id" type="hidden" suppress="true" order="1">
+<perch:content id="cponoff" type="select" label="Item On/Off" options="On, Off" suppress="true" order="2">
+<perch:content id="cpshow" type="select" label="Show on 'Home' page" default="No" options="Yes, No" suppress="true" order="3">
+<perch:content id="cpDvc" type="select" label="Show on Device" options="Both, Desktop, Mobile" suppress="true" order="4">
+<perch:content id="cpFmt" type="select" label="Format" options=" , BBL, HPA, MPU, SKY, MBL, MBS" suppress="true" order="9">
+<perch:content id="cpLtl" type="text" label="List Title" title="true" suppress="true" order="10">
+<perch:content id="cpMtl" type="text" label="Home Title" suppress="true" order="11">
+<perch:content id="cpStl" type="text" label="Home Description" suppress="true" size="xxl" order="12">
+<perch:content id="cpDes" type="textarea" label="Detailed Description" html="false" editor="markitup" markdown suppress="true" order="13">
+<perch:content id="cpImg" type="image" label="Image" suppress="true" bucket="work" order="14">
+<perch:content id="cpTag" type="text" html="true" label="Ad Tag" html suppress="true" size="xxl" order="15">
+</perch:group>
+
+<perch:group label="Categories" collapse>
+<perch:categories set="workcontent" id="workcontent" label="Categories - Content" display-as="checkboxes" suppress="true" order="20"> <perch:category id="catTitle"> </perch:categories>
+<perch:categories set="worksectors" id="worksectors" label="Categories - Sector" display-as="checkboxes" suppress="true" order="21"> <perch:category id="catTitle"> </perch:categories>
+</perch:group>

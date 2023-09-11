@@ -1,0 +1,344 @@
+<perch:if exists="slideonoff">
+    <perch:if id="slidetype" value="Video">
+        <!-- SLIDE VIDEO -->
+        <li data-index="rs-<perch:content id="perch_item_index" type="hidden">" 
+            data-transition="<perch:content id="transition">" 
+            data-slotamount="default" 
+            data-hideafterloop="0" 
+            data-hideslideonmobile="off"  
+            data-easein="Power4.easeInOut" 
+            data-easeout="Power4.easeInOut" 
+            data-masterspeed="<perch:content id="masterspeed">" 
+            data-thumb="<perch:content type="image" id="image" width="50" height="50" crop="true">" 
+            data-rotate="0" 
+            data-saveperformance="off"  
+            data-title="<perch:content id="title"> - <perch:content id="subtitle">" 
+            data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+            <!-- MAIN IMAGE -->
+            <img class="rev-slidebg" 
+                 src="/noindex/default/imgs/misc/dummy.png" 
+                 data-lazyload="<perch:content id="image">" 
+                 alt="" 
+                 data-bgposition="<perch:content id="bgposition">"  
+                 data-bgfit="cover" 
+                 data-bgparallax="10" 
+                 data-no-retina>
+
+            <!-- VIDEO LAYER -->
+            <div class="rs-background-video-layer" 
+			    data-forcerewind="on" 
+			    data-volume="mute" 
+			    data-videowidth="100%" 
+			    data-videoheight="100%" 
+			    data-videomp4="<perch:content id="videomp4">" 
+			    data-videopreload="auto" 
+			    data-videoloop="none" 
+			    data-forceCover="1" 
+			    data-aspectratio="16:9" 
+			    data-autoplay="true" 
+			    data-autoplayonlyfirsttime="false" 
+			    data-nextslideatend="true">
+            </div>
+    </perch:if>
+    
+    <perch:if id="slidetype" value="Standard">
+        <!-- SLIDE STANDARD -->    
+        <li data-index="rs-<perch:content id="perch_item_index" type="hidden">" 
+            data-transition="<perch:content id="transition">" 
+            data-slotamount="default" 
+            data-hideafterloop="0" 
+            data-hideslideonmobile="off" 
+            data-easein="Power4.easeInOut" 
+            data-easeout="Power4.easeInOut" 
+            data-masterspeed="<perch:content id="masterspeed">" 
+            data-thumb="<perch:content type="image" id="image" width="50" height="50" crop="true">" 
+            data-rotate="0" 
+            
+            data-fstransition="<perch:content id="fstransition">" 
+            data-fsmasterspeed="<perch:content id="fsmasterspeed">" 
+            data-fsslotamount="7" 
+            
+            data-saveperformance="off" 
+            data-title="<perch:content id="title"> - <perch:content id="subtitle">" 
+            data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+            <!-- MAIN IMAGE -->
+		    <img class="rev-slidebg" 
+                 src="/noindex/default/imgs/misc/dummy.png" 
+                 data-lazyload="<perch:content id="image">" 
+                 alt="" 
+                 data-bgposition="<perch:content id="bgposition">" 
+                 data-bgfit="cover" 
+                 data-bgrepeat="no-repeat" 
+                 data-bgparallax="10" 
+                 data-no-retina>
+    </perch:if>
+    
+    <perch:if id="slidetype" value="KenBurns">
+        <!-- SLIDE KEN BURNS -->    
+        <li data-index="rs-<perch:content id="perch_item_index" type="hidden">" 
+            data-transition="<perch:content id="transition">" 
+            data-slotamount="default" 
+            data-hideafterloop="0" 
+            data-hideslideonmobile="off" 
+            data-easein="Power4.easeInOut" 
+            data-easeout="Power4.easeInOut" 
+            data-masterspeed="<perch:content id="masterspeed">" 
+            data-thumb="<perch:content type="image" id="image" width="50" height="50" crop="true">" 
+            data-rotate="0" 
+            data-saveperformance="off" 
+            data-title="<perch:content id="title"> - <perch:content id="subtitle">" 
+            data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+            <!-- MAIN IMAGE -->
+		    <img class="rev-slidebg" 
+                 src="/noindex/default/imgs/misc/dummy.png" 
+                 data-lazyload="<perch:content id="image">" 
+                 alt="" 
+                 
+                 data-kenburns="on" 
+                 data-duration="<perch:content id="duration">" 
+                 data-ease="Linear.easeNone" 
+                 
+                 data-bgposition="<perch:content id="bgposition">" 
+                 
+                 data-scalestart="<perch:content id="scalestart">" 
+                 data-scaleend="<perch:content id="scaleend">" 
+                 
+                 data-offsetstart="<perch:content id="offsetstart">" 
+                 data-offsetend="<perch:content id="offsetend">" 
+                 
+                 data-rotatestart="<perch:content id="rotatestart">" 
+                 data-rotateend="<perch:content id="rotateend">" 
+                 
+                 data-bgparallax="10" 
+                 data-no-retina>
+    </perch:if>
+    
+    <perch:if id="slidetype" value="MoveIt">
+        <!-- SLIDE MOVEIT -->    
+        <li data-index="rs-<perch:content id="perch_item_index" type="hidden">" 
+            data-transition="<perch:content id="transition">" 
+            data-slotamount="7" 
+            data-hideafterloop="0" 
+            data-hideslideonmobile="off" 
+            data-easein="Power4.easeInOut" 
+            data-easeout="Power4.easeInOut" 
+            data-masterspeed="<perch:content id="masterspeed">" 
+            data-thumb="<perch:content type="image" id="image" width="50" height="50" crop="true">" 
+            data-rotate="0" 
+            
+            data-saveperformance="off" 
+            data-title="<perch:content id="title"> - <perch:content id="subtitle">" 
+            data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+            <!-- MAIN IMAGE -->
+		    <img class="rev-slidebg" 
+                 src="/noindex/default/imgs/misc/dummy.png" 
+                 data-lazyload="<perch:content id="image">" 
+                 alt="" 
+                 
+                 data-kenburns="on" 
+                 data-duration="<perch:content id="duration">" 
+                 data-ease="Linear.easeNone" 
+                 
+                 data-bgposition="<perch:content id="bgposition">" 
+                 
+                 data-scalestart="<perch:content id="scalestart">" 
+                 data-scaleend="<perch:content id="scaleend">" 
+                 
+                 data-offsetstart="<perch:content id="offsetstart">" 
+                 data-offsetend="<perch:content id="offsetend">" 
+                 
+                 data-rotatestart="<perch:content id="rotatestart">" 
+                 data-rotateend="<perch:content id="rotateend">" 
+                 
+                 data-bgparallax="10" 
+                 data-no-retina>
+    </perch:if>
+    
+    
+    
+        <perch:if exists="overlayon">
+            <!-- OVERLAY -->
+            <div class="tp-caption tp-shape tp-shapewrapper <perch:if exists="overlayimgon">slider-overlay</perch:if>" 
+                id="slide-overlay-layer-<perch:content id="perch_item_index" type="hidden">" 
+                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+				data-width="full" 
+			    data-height="full" 
+			    data-whitespace="nowrap" 
+ 
+			    data-type="shape" 
+			    data-basealign="slide" 
+			    data-responsive_offset="on" 
+			    data-responsive="off" 
+			    data-frames='[{"from":"opacity:0;","speed":200,"to":"o:1;","delay":200,"ease":"Power3.easeInOut"},{"delay":"wait","speed":2000,"to":"opacity:0;","ease":"Power2.easeInOut"}]' 
+			    data-textAlign="['left','left','left','left']" 
+			    data-paddingtop="[0,0,0,0]" 
+			    data-paddingright="[0,0,0,0]" 
+			    data-paddingbottom="[0,0,0,0]" 
+			    data-paddingleft="[0,0,0,0]" 
+
+			    style="z-index:10; text-transform:left; background-color:<perch:content id="overlaycolor">; border-color:rgba(0, 0, 0, 0); border-width:0px; ">
+            </div>
+        </perch:if>
+            
+
+        <perch:if exists="title">
+		    <!-- LAYER NR. 1 -->
+		    <div class="tp-caption NotGeneric-Title tp-resizeme" 
+                id="slide-1-layer-<perch:content id="perch_item_index" type="hidden">" 
+                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+				data-fontsize="['70','70','70','45']" 
+			    data-lineheight="['70','70','70','50']" 
+			    data-width="none" 
+			    data-height="none" 
+			    data-whitespace="nowrap" 
+                 
+			    data-type="text" 
+			    data-responsive_offset="on" 
+                 
+			    data-frames='[{"from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1000,"split":"chars","splitdelay":0.05,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' 
+			    data-textAlign="['left','left','left','left']" 
+			    data-paddingtop="[10,10,10,10]" 
+			    data-paddingright="[0,0,0,0]" 
+			    data-paddingbottom="[10,10,10,10]" 
+			    data-paddingleft="[0,0,0,0]" 
+
+			    style="z-index:11; white-space:nowrap; text-transform:left; text-transform:uppercase;"><perch:content id="title">
+            </div>
+        </perch:if>
+            
+        <perch:if exists="subtitle">
+            <!-- LAYER NR. 2 -->
+            <div class="tp-caption NotGeneric-SubTitle tp-resizeme" 
+                id="slide-2-layer-<perch:content id="perch_item_index" type="hidden">" 
+                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']" 
+                data-width="none" 
+			    data-height="none" 
+			    data-whitespace="nowrap" 
+                 
+			    data-type="text" 
+			    data-responsive_offset="on" 
+                 
+			    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' 
+			    data-textAlign="['left','left','left','left']" 
+			    data-paddingtop="[0,0,0,0]" 
+			    data-paddingright="[0,0,0,0]" 
+			    data-paddingbottom="[0,0,0,0]" 
+			    data-paddingleft="[0,0,0,0]" 
+
+			    style="z-index:12; white-space:nowrap; text-transform:left; text-transform:uppercase;"><perch:content id="subtitle">
+            </div>
+        </perch:if>
+
+        <perch:if exists="icon">
+            <!-- LAYER NR. 3 -->
+            <div class="tp-caption NotGeneric-Icon tp-resizeme" 
+                id="slide-3-layer-<perch:content id="perch_item_index" type="hidden">" 
+                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" 
+				data-width="none" 
+			    data-height="none" 
+			    data-whitespace="nowrap" 
+                 
+			    data-type="text" 
+			    data-responsive_offset="on" 
+                 
+			    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' 
+			    data-textAlign="['left','left','left','left']" 
+			    data-paddingtop="[4,4,4,4]" 
+			    data-paddingright="[4,4,4,4]" 
+			    data-paddingbottom="[4,4,4,4]" 
+			    data-paddingleft="[4,4,4,4]" 
+
+			    style="z-index:13; white-space:nowrap; text-transform:left; cursor:default;"><i class="<perch:content id="icon">"></i>
+            </div>
+        </perch:if>
+
+<perch:if exists="logo">
+    <!-- LOGO -->
+    <div class="tp-caption tp-resizeme rs-parallaxlevel-6"
+         id="rev-logo-layer-<perch:content id="perch_item_index" type="hidden">"
+    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+    data-y="['top','top','top','top']" data-voffset="['0','0','0','0']"
+    data-width="none"
+    data-height="none"
+    data-whitespace="nowrap"
+
+    data-type="image"
+    data-responsive_offset="on"
+
+    data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
+    data-textAlign="['left','left','left','left']"
+    data-paddingtop="[0,0,0,0]"
+    data-paddingright="[0,0,0,0]"
+    data-paddingbottom="[0,0,0,0]"
+    data-paddingleft="[0,0,0,0]"
+
+    style="z-index:14; text-transform:left; border-width:0px;">
+    <div class="rs-looped rs-wave" data-speed="4" data-angle="0" data-radius="0" data-origin="50% 50%">
+        <img src="noindex/default/imgs/site/single-black-logo-xh.png" alt="" data-ww="['310px','310px','310px','310px']" data-hh="['68px','68px','68px','68px']" width="310" height="68" data-no-retina>
+    </div>
+    </div>
+</perch:if>
+
+<perch:if exists="linkbtn">
+    <!-- LINK -->
+    <a class="tp-caption sm-rev-btn t"
+       id="rev-btn-layer-<perch:content id="perch_item_index" type="hidden">"
+    href="<perch:content id="linkref">"
+    target="_blank"
+    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+    data-y="['middle','middle','middle','middle']" data-voffset="['120','120','120','120']"
+    data-width="none"
+    data-height="none"
+    data-whitespace="nowrap"
+
+    data-type="button"
+    data-actions=""
+
+
+    data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
+    data-textAlign="['center','center','center','center']"
+
+    style="z-index:21;"><perch:content id="linktxt"></a>
+</perch:if>
+
+        </li>
+
+</perch:if>
+<perch:content id="slideonoff" type="checkbox" label="Slide On/Off (Check for 'On')" value="true" suppress="true" order="1" />
+<perch:content id="slidetype" type="select" label="Slide Type" default="Standard" options="Standard, Video, KenBurns, MoveIt" suppress="true" order="2" />
+<perch:content id="title" type="text" label="Title" title="true" suppress="true" order="5" />
+<perch:content id="subtitle" type="text" label="Sub Title" suppress="true" order="6" />
+<perch:content id="image" type="image" label="Main Image" width="2048" height="1365" crop="true" bucket="slider" suppress="true" order="7" />
+<perch:content id="videomp4" type="file" label="MP4 File" bucket="videos" suppress="true" order="10" />
+<perch:content id="duration" type="text" label="Main Image - Effect Duration" help="Time in miliseconds i.e. 10000" default="10000" suppress="true" order="21" />
+<perch:content id="bgposition" type="text" label="Main Image - Start Position" help="top, left, bottom, right, center" default="center center" suppress="true" order="22" />
+<perch:content id="scalestart" type="text" label="Main Image - Start Scale" help="Values (100)" default="100" suppress="true" order="23" />
+<perch:content id="scaleend" type="text" label="Main Image - End Scale" help="Values (120)" default="120" suppress="true" order="24" />
+<perch:content id="offsetstart" type="text" label="Main Image - Start Offset" help="Values (0 -500)" default="0 0" suppress="true" order="25" />
+<perch:content id="offsetend" type="text" label="Main Image - End Offset" help="Values (0 500)" default="0 0" suppress="true" order="26" />
+<perch:content id="rotatestart" type="text" label="Main Image - Start Rotation" help="Values (0)" default="0" suppress="true" order="27" />
+<perch:content id="rotateend" type="text" label="Main Image - End Rotation" help="Values (0)" default="0" suppress="true" order="28" />
+<perch:content id="transition" type="select" label="Transition In Effect" default="fade" options=" , fade, slideup, slidedown, slideleft, slideright, zoomout, zoomin, boxslide, boxfade, slotzoom-horizontal, slotslide-horizontal, slotfade-horizontal, slotzoom-vertical, slotslide-vertical, slotfade-vertical, curtain-1, curtain-2, curtain-3, parallaxhorizontal, fadetotopfadefrombottom" suppress="true" order="30" />
+<perch:content id="masterspeed" type="text" label="Transition In Speed" help="Time in miliseconds i.e. 1500" default="2000" suppress="true" order="31" />
+<!--<perch:content id="slidetime" type="text" label="Slide Duration" help="Time in miliseconds i.e. 5500" default="6000" suppress="true" order="32" />-->
+<perch:content id="fstransition" type="select" label="Transition Out Effect" default="fade" options=" , fade, slideup, slidedown, slideleft, slideright, zoomout, zoomin, boxslide, boxfade, slotzoom-horizontal, slotslide-horizontal, slotfade-horizontal, slotzoom-vertical, slotslide-vertical, slotfade-vertical, curtain-1, curtain-2, curtain-3, parallaxhorizontal, fadetotopfadefrombottom" suppress="true" order="40" />
+<perch:content id="fsmasterspeed" type="text" label="Transition Out Speed" help="Time in miliseconds i.e. 1500" default="1500" suppress="true" order="41" />
+<perch:content id="logo" type="checkbox" label="Logo On/Off (Check for 'On')" value="true" suppress="true" order="50" />
+<perch:content id="icon" type="text" label="Icon" help="lni-volume - https://lineicons.com/icons/   pe-7s-refresh - https://themes-pixeden.com/font-demos/7-stroke/   fab fa-ello - https://fontawesome.com/icons?d=gallery" suppress="true" order="51" />
+
+<perch:content id="linkbtn" type="checkbox" label="Link On/Off (Check for 'On')" value="true" suppress="true" order="52" />
+<perch:content id="linktxt" type="text" label="Link Text" suppress="true" order="53" />
+<perch:content id="linkref" type="text" label="Link URL" suppress="true" order="54" />
+
+
+<perch:content id="overlayon" type="checkbox" value="true" label="Overlay On/Off (Check for 'On')" suppress="true" order="60" />
+<perch:content id="overlayimgon" type="checkbox" value="true" label="Overlay Hash On/Off (Check for 'On')" suppress="true" order="61" />
+<perch:content id="overlaycolor" type="text" label="Overlay Color (if overlay is on)" default="rgba(0, 0, 0, 0.25)" help="css background color rgba or hex - rgba(0, 0, 0, 0.25)" suppress="true" order="62" />

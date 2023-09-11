@@ -1,0 +1,329 @@
+<perch:if id="itemonoff" value="On">
+
+    <section id="live-stream">
+        <div class="container">
+            <div class="row">
+                <div id="player" class="full"></div>
+                <div id="yt-mute-btn"><i class="typcn typcn-volume-mute"></i></div>
+                <div id="vp-ovr">
+                    <div id="vp-stc"></div>
+                    <div class="vp-txt">LIVE IN</div>
+                    <div id="vp-cdn"></div>
+                </div>
+                <div id="vp-end">
+                    <div class="vp-txt">THANKS FOR WATCHING</div>
+                </div>
+            </div>
+            <div class="row fixed-row-bottom d-flex justify-content-between align-items-end">
+
+                <div id="blk-l" class="col-12 col-lg-5 justify-content-center desktop-only">
+                    <perch:if id="imageonoff" value="On">
+                        <perch:if exists="image">
+                            <div class="splash-logo"><img src="<perch:content id="image">" alt="<perch:content id="title">"></div>
+                            <perch:else>
+                                <div class="splash-logo"><img src="/noindex/live/imgs/Silence-BC-Logo-2020.png" alt="<perch:content id="title">"></div>
+                        </perch:if>
+                    </perch:if>
+                    <h2 class="splash-title"><perch:content id="title" markdown></h2>
+                    <div class="align-self-end splash-txt"><perch:content id="textbody" markdown textile="true" striptags="true" html="false"></div>
+                </div>
+
+                <div id="blk-r" class="col-12 col-lg-3 justify-content-center">
+                    <perch:template path="forms/splash_form.html"></perch:template>
+                </div>
+
+                <perch:if id="questiononoff" value="On">
+                    <div id="btn-ask-q" class="col-12 col-lg-3 justify-content-center">
+                        <a href="#" class="btn btn-qa"><i class="typcn typcn-pencil"></i>ASK A QUESTION</a>
+                    </div>
+                </perch:if>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var StaticGen;
+        var player;
+        var YT;
+        var countdownExpired = false;
+        var streamPlaying = false;
+        var streamPaused = false;
+        var streamBuffering = false;
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var countDownDate = new Date('<perch:content id="livedatetime" format="%h %d, %Y %H:%M:%S">');
+        var now = new Date('<perch:content id="sDate" type="hidden"> <perch:content id="sTime" type="hidden">');
+        var staticDistance = countDownDate - now;
+        if (staticDistance >= 0) {
+            silenceCountdown('#vp-cdn', staticDistance);
+        } else {
+            countdownExpired = true;
+        }
+
+
+        function silenceCountdown(cdn, staticDistance) {
+
+            $('#vp-ovr').css('display','block');
+            showStatic('#vp-stc');
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Find the distance between 'now' and 'countDownDate'
+                var distance = staticDistance -= 1000;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));//Days + Hrs
+                days = (days < 10) ? "0"+days : days;//Adds the leading '0'
+
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));//Hrs incorporating Days
+                //var hours = Math.floor(distance / (1000 * 60 * 60));//Just hours
+                hours = (hours < 10) ? "0"+hours : hours;//Adds the leading '0'
+
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                minutes = (minutes < 10) ? "0"+minutes : minutes;//Adds the leading '0'
+
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                seconds = (seconds < 10) ? "0"+seconds : seconds;//Adds the leading '0'
+
+                if (distance == '<perch:content id="refreshtime">000') {
+                    clearCache();
+                }
+                if (distance < 0) {
+                    clearInterval(x);
+                    $(cdn).text('EXPIRED');
+                    StaticGen.pause();
+                    countdownExpired = true;
+                    player.playVideo();
+
+                } else if (distance <= 60000) {//If minutes <= 00
+                    $(cdn).text(seconds + "secs");
+                    if (distance <= 1000) {//If seconds <= 01
+                        $('#vp-ovr, #vp-end').delay(1000).fadeOut(1000);
+                    }
+                } else if (distance <= 3600000) {//If hours <= 00
+                    $(cdn).text(minutes + "mins " + seconds + "secs");
+                } else if (distance <= 86400000) {//If days <= 00
+                    $(cdn).text(hours + "hrs " + minutes + "mins " + seconds + "secs");
+                } else {
+                    $(cdn).text(days + "days " + hours + "hrs " + minutes + "mins " + seconds + "secs");
+                }
+
+            }, 1000);
+        };
+
+
+        $('#yt-mute-btn').click(function() {
+            if (player.isMuted()) {
+                $('#yt-mute-btn').html('<i class="typcn typcn-volume-up"></i>');
+                player.unMute();
+
+            } else {
+                $('#yt-mute-btn').html('<i class="typcn typcn typcn-volume-mute"></i>');
+                player.mute();
+            }
+        });
+
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '<perch:content id="height">',
+                width: '<perch:content id="width">',
+                videoId: '<perch:content id="streamid">',
+                playerVars: {
+                    'showinfo'      : '0',
+                    'modestbranding': '<perch:content id="modestbranding">',
+                    'enablejsapi'   : '<perch:content id="enablejsapi">',
+                    'color'         : '<perch:content id="color">',
+                    'autoplay'      : '<perch:content id="autoplay">',
+                    'playsinline'   : '<perch:content id="playsinline">',
+                    'start'         : '<perch:content id="start">',
+                    'rel'           : '<perch:content id="rel">',
+                    'controls'      : '<perch:content id="showcontrols">',
+                    'loop'          : '<perch:content id="loop">',
+                },
+                events: {
+                    'onReady': function(e) {
+                        e.target.mute();
+                        if (countdownExpired) {
+
+                            if (isMobile.any()) {
+                                e.target.Unmute();
+                                player.Unmute();
+                                //$('#yt-mute-btn').html('<i class="typcn typcn-volume-mute"></i>');
+                            } else {
+                                e.target.mute();
+                                player.mute();
+                                //player.mute();
+                                //$('#yt-mute-btn').html('<i class="typcn typcn-volume-mute"></i>');
+                            }
+
+
+
+                            player.playVideo();
+                            streamPlaying = true;
+                            streamPaused = false;
+                            streamBuffering = false;
+                        }
+                    },
+                    'onStateChange': function (event) {
+
+
+                        if (event.data == YT.PlayerState.MUTED) {
+                            $('#yt-mute-btn').html('<i class="typcn-volume-mute"></i>');
+                        }
+
+                        if (event.data == YT.PlayerState.PLAYING) {
+                            streamPlaying = true;
+                            streamPaused = false;
+                            streamBuffering = false;
+                            $('#vp-ovr, #vp-end').css('display','none');
+                        }
+
+                        if (event.data == YT.PlayerState.PAUSED) {
+                            streamPlaying = false;
+                            streamPaused = true;
+                            streamBuffering = false;
+
+                            $('#vp-end').css('display','block');
+                            $('#vp-end .vp-txt').html('PAUSED<br />CLICK TO PLAY');
+                            $('#vp-end').click(function() {
+                                $('#vp-end').css('display','none');
+                                player.playVideo();
+                            });
+                        }
+
+                        if (event.data == YT.PlayerState.BUFFERING) {
+                            streamPlaying = false;
+                            streamPaused = false;
+                            streamBuffering = true;
+                            setInterval(function(){ checkBuffering(); }, 3000);
+
+                            var checkBuffering = function (){
+                                if (streamBuffering == true && streamPlaying == false && streamPaused == false) {
+                                    $('#vp-end').css('display','block');
+                                    $('#vp-end .vp-txt').text('THANKS FOR WATCHING');
+                                    $('#vp-stc, #vp-cdn').css('display','none');
+                                    player.mute();
+                                    player.stopVideo();
+                                }
+                                if (streamBuffering == true && streamPlaying == true && streamPaused == false) {
+                                    $('#vp-ovr, #vp-end').css('display','none');
+                                    player.mute();
+                                    player.playVideo();
+                                }
+                            }
+
+                        }
+                        if (event.data == YT.PlayerState.ENDED) {
+                            streamPlaying = false;
+                            streamPaused = false;
+                            streamBuffering = false;
+                            $('#vp-end').css('display','block');
+                            $('#vp-end .vp-txt').text('THANKS FOR WATCHING');
+                            $('#vp-stc, #vp-cdn').css('display','none');
+                            player.mute();
+                            player.stopVideo();
+                        }
+                    }
+                }
+            });
+
+        }
+
+        var clearCache = function (){
+            location.reload(true);
+        }
+        var hideStatic = function (){
+            $('#vp-ovr').css('display','none');
+        }
+
+
+        function showStatic(selt) {
+            StaticGen.init(selt, {
+                tileWidth: 200,
+                tileHeight: 201,
+                totalFrames: 6,
+                fps: 15,
+                pixelWidth: 1,
+                pixelHeight: 1,
+                stretchH: 1,
+                stretchV: 1,
+                scanLines: false,
+                randomizeRows: true
+            });
+        }
+
+
+        /* MOBILE DETECT */
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
+
+        if ( isMobile.any() ) {
+            $('.desktop-only').css('display', 'none');
+            $('.mobile-only').css('display', 'block');
+        }
+
+        <perch:if id="headeronoff" value="On">
+            $('.header').css('display','block');
+        </perch:if>
+        <perch:if id="muteonoff" value="On">
+            $('#yt-mute-btn').css('display','block');
+        </perch:if>
+
+    </script>
+</perch:if>
+
+<perch:group label="Event Title/Description">
+<perch:content id="itemonoff" type="select" label="Event On/Off" options="On, Off" suppress="true" order="1">
+<perch:content id="questiononoff" type="select" label="Question On/Off" options="On, Off" suppress="true" order="2">
+<perch:content id="livedatetime" type="date" time label="Live Date/Time" suppress="true" order="3">
+<perch:content id="title" type="text" label="Title" title suppress="true" order="4">
+<perch:content id="textbody" type="textarea" label="Description" markdown striptags="true" html="false" suppress="true" order="5">
+<perch:content id="image" type="image" label="Event Image" bucket="images" help="Image used for Event" suppress="true" order="6">
+<perch:content id="imageonoff" type="select" label="Event Image On/Off" options="On, Off" default="Off" suppress="true" order="7">
+</perch:group>
+
+<perch:group label="Live Stream Settings" collapse>
+<perch:content id="headeronoff" type="select" label="Header On/Off" options="On, Off" suppress="true" order="10">
+<perch:content id="muteonoff" type="select" label="Mute Button On/Off" options="On, Off" suppress="true" order="11">
+<perch:content id="streamid" type="text" label="Live Stream ID" help="YouTube embed code ( just the code part i.e. G632Adm2RKY )" suppress="true" order="13">
+<perch:content id="refreshtime" type="select" label="Refresh Time" options="<perch:template path="content/lists/numbers-1-100.html">" help="Time to refresh/reload the page in seconds" suppress="true" order="14">
+</perch:group>
+
+<perch:group label="Player Settings" collapse>
+<perch:content id="showcontrols" type="select" label="Show YouTube Video Controls" options="Yes|1, No|0" default="No" help="This parameter indicates whether the video player controls are displayed: No (0) – Player controls do not display in the player." suppress="true" order="20">
+<perch:content id="width" type="text" size="s" label="Player Width" default="100%" help="Can be px or %" suppress="true" order="21">
+<perch:content id="height" type="text" size="s" label="Player Height" default="100%" help="Can be px or %" suppress="true" order="22">
+<perch:content id="autoplay" type="select" label="Auto Play" options="Yes|1, No|0" default="No" help="This parameter specifies whether the initial video will automatically start to play when the player loads." suppress="true" order="23">
+<perch:content id="playsinline" type="select" label="Plays Inline (IOS only)" options="Yes|1, No|0" default="Yes" help="This parameter controls whether videos plays inline or fullscreen in an HTML5 player on iOS. No (0) - Causes fullscreen playback." suppress="true" order="24">
+<perch:content id="loop" type="select" label="Loop Video" options="Yes|1, No|0" default="No" help="To loop a single video, set the loop parameter value to Yes (1)." suppress="true" order="25">
+<perch:content id="rel" type="select" label="Show Related" options="Yes|1, No|0" default="No" help="This parameter indicates whether the player should show related videos when playback ends. set to No (0), the player does NOT show related videos." suppress="true" order="26">
+<perch:content id="color" type="select" label="Progress Bar Color" options="White|white, Red|red" default="Red" help="Color of the player's video progress bar" suppress="true" order="27">
+<perch:content id="modestbranding" type="select" label="Show YouTube logo" options="Yes|0, No|1" default="No" help="Show the YouTube logo. Set to No (1) - to prevent the YouTube logo from displaying" suppress="true" order="28">
+<perch:content id="enablejsapi" type="select" label="IFrame or JavaScript Player API" options="Yes|1, No|0" default="Yes" help="Setting the parameter's value to Yes (1) - enables the player to be controlled via IFrame or JavaScript Player API calls" suppress="true" order="29">
+<perch:content id="start" type="text" label="Start Position" help="This parameter causes the player to begin playing the video at the given number of seconds" suppress="true" order="30">
+<perch:content id="showstatic" type="select" label="Show Static Overlay" options="Yes|1, No|0" default="Yes" help="Show or hide static overlay" suppress="true" order="31">
+</perch:group>

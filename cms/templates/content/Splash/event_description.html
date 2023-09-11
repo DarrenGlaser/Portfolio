@@ -1,0 +1,47 @@
+<section id="live-stream">
+    <div class="container">
+        <div class="row">
+            <div id="player" class="full"></div>
+            <div id="yt-mute-btn"><i class="typcn typcn-volume-mute"></i></div>
+            <div id="vp-ovr">
+                <div id="vp-stc"></div>
+                <div class="vp-txt">LIVE IN</div>
+                <div id="vp-cdn"></div>
+            </div>
+            <div id="vp-end">
+                <div class="vp-txt">THANKS FOR WATCHING</div>
+            </div>
+        </div>
+        <div class="row fixed-row-bottom d-flex justify-content-between align-items-end">
+
+            <div id="blk-l" class="col-12 col-lg-5 justify-content-center desktop-only">
+                <perch:if id="imageonoff" value="On">
+                    <perch:if exists="image">
+                        <div class="splash-logo"><img src="<perch:content id="image">" alt="<perch:content id="title">"></div>
+                        <perch:else>
+                            <div class="splash-logo"><img src="/noindex/live/imgs/Silence-BC-Logo-2020.png" alt="<perch:content id="title">"></div>
+                    </perch:if>
+                </perch:if>
+                <h2 class="splash-title"><perch:content id="title" markdown></h2>
+                <div class="align-self-end splash-txt"><perch:content id="textbody" markdown textile="true" striptags="true" html="false"></div>
+            </div>
+
+            <div id="blk-r" class="col-12 col-lg-3 justify-content-center">
+                <perch:template path="forms/splash_form.html"></perch:template>
+            </div>
+
+            <perch:if id="questiononoff" value="On">
+                <div id="btn-ask-q" class="col-12 col-lg-3 justify-content-center">
+                    <a href="#" class="btn btn-qa"><i class="typcn typcn-pencil"></i>ASK A QUESTION</a>
+                </div>
+            </perch:if>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

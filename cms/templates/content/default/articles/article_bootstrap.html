@@ -1,0 +1,41 @@
+<perch:if id="articleonoff" value="1">
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+    
+    <perch:if exists="icon">
+        <div class="<perch:content id="iconclass">"> <i class="typcn <perch:content id="icon">"></i> </div>
+    </perch:if>
+                
+    <perch:if exists="title">
+        <<perch:content id="titletype"> class="<perch:content id="titleclass">" style="<perch:content id="titlestyle">"><perch:content id="title"></<perch:content id="titletype">>
+    </perch:if>
+
+    <perch:if exists="textbody">
+        <div class="<perch:content id="textclass">" data-wow-offset="80" data-wow-duration="2s" style="<perch:content id="textstyle">"><perch:content id="textbody" markdown editor="markitup" textile="true" html="true"></div>
+    </perch:if>
+        
+</div>
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Article On/Off (Check for 'On')" value="1" divider-before="Article Settings" suppress="true" order="1">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-4 col-lg-4 text-center" help="col-sm-4 col-lg-4 text-center text-left center mb-4 wow fadeInRightBig" suppress="true" order="10">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="11">
+</perch:group>
+    
+<perch:group label="Icon Settings" collapse>
+<perch:content id="iconclass" type="text" label="Icon Div Class" help="bouncein wow fadeInRightBig" divider-before="Icon Settings" suppress="true" order="20">
+<perch:content id="icon" type="text" label="Icon" help="Icon class - typcn typcn-device-laptop, typcn-lightbulb, typcn-globe" suppress="true" order="21">
+</perch:group>
+        
+<perch:group label="Title Settings" collapse>
+<perch:content id="title" type="text" label="Title" title divider-before="Title Settings" suppress="true" order="31">
+<perch:content id="titletype" type="select" label="Title Type" options=" , h1, h2, h3, h4, h5, h6, p, span" default="h5" help="h1, h2, h3, h4, h5, h6, p, span" suppress="true" order="32">
+<perch:content id="titleclass" type="text" label="Title Class" help="text-left center wow fadeInRightBig" suppress="true" order="33">
+<perch:content id="titlestyle" type="text" label="Title Style" suppress="true" order="34">
+</perch:group>
+
+<perch:group label="Text Settings" collapse>
+<perch:content id="textclass" type="text" label="Text Div Class" help="col-sm-12 col-lg-12 text-center mb-4" divider-before="Text Settings" suppress="true" order="40">
+<perch:content id="textstyle" type="text" label="Text Div Style" suppress="true" order="41">
+<perch:content id="textbody" type="textarea" label="Body Text" markdown editor="markitup" textile="true" html="true" suppress="true" order="42"> 
+</perch:group>

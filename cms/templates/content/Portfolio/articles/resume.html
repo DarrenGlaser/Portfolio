@@ -1,0 +1,25 @@
+<perch:if id="cponoff" value="Yes">
+    <div class="bg-dark rounded p-4 mb-4">
+        <perch:if exists="resYear">
+        <p class="badge bg-danger text-2 fw-400"><perch:content id="resYear"></p>
+        </perch:if>
+        <perch:if exists="resMainTitle">
+        <h3 class="text-5 text-white"><perch:content id="resMainTitle"></h3>
+        </perch:if>
+
+        <perch:repeater id="resSubItems" label="Sub Items">
+            <perch:content id="resSubOnOff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="4">
+            <perch:if id="resSubOnOff" value="Yes">
+                <perch:if exists="resSubYear">
+                <p class="badge bg-danger text-2 fw-400"><perch:content id="resSubYear" type="text" label="Years from - to | 2008 - 2023" order="5"></p>
+                </perch:if>
+                <p class="text-primary mb-0"><perch:content id="resSubTitle" type="text" label="Sub Title" title order="6"></p>
+                <p class="text-white-50 mb-4"><perch:content id="resSubDescription" type="text" label="Sub Description" size="xxl" textile="true" html="true" order="7"></p>
+            </perch:if>
+        </perch:repeater>
+    </div>
+</perch:if>
+
+<perch:content id="cponoff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="1">
+<perch:content id="resYear" type="text" label="Years from - to | 2008 - 2023" suppress="true" order="2">
+<perch:content id="resMainTitle" type="text" label="Main Title" title  suppress="true" order="3">

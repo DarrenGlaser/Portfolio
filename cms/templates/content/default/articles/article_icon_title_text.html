@@ -1,0 +1,24 @@
+<perch:before>
+<perch:if id="seconoff" value="1">
+<section id="<perch:content id="secid">" class="<perch:content id="secclass">" style="<perch:content id="secstyle">">
+    <div class="container">
+        <div class="row">
+</perch:before>
+
+<perch:repeater id="article" label="Bootstrap Articles">
+         <perch:template path="content/default/articles/article_bootstrap.html">   
+</perch:repeater>            
+
+<perch:after>
+        </div>
+    </div>
+</section>
+</perch:if>
+</perch:after>
+
+<perch:group label="Section Settings" collapse>
+<perch:content id="seconoff" type="checkbox" label="Section On/Off (Check for 'On')" value="1" suppress="true" order="1">
+<perch:content id="secid" type="text" label="Section ID" suppress="true" order="2">
+<perch:content id="secclass" type="text" label="Section Class" help="pad90 text-left center wow fadeInRightBig" suppress="true" order="3">
+<perch:content id="secstyle" type="text" label="Section Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="4">
+</perch:group>

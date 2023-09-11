@@ -1,0 +1,31 @@
+<perch:if id="cponoff" value="On">
+<div class="media-box">
+
+    <a class="media-box-image" href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">">
+        <perch:if exists="cpImg">
+            <div data-width="300" data-height="600" data-thumbnail="<perch:content id="cpImg">"><div class="imgborder"></div></div>
+        <perch:else>
+            <div data-width="300" data-height="600" data-thumbnail="noindex/imgs/work/silence-logo.png"></div>
+        </perch:if>
+
+        <a class="thumbnail-overlay" href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">" title="<perch:content id="cpLtl">">
+            <div class="media-box-title"><perch:content id="cpFmt"></div>
+        </a>
+
+    </a>
+
+    <div class="media-box-content">
+        <div class="media-box-title"><perch:content id="cpLtl"></div>
+        <div class="media-box-year"><perch:content id="cpFmt"></div>
+        <div class="media-box-date" style="display:none;"><perch:content id="cpDat"></div>
+        <div class="media-box-author">by Damon Hart</div>
+
+        <div class="media-box-text">Lorem ipsum dolor sitam psico dell consecteture adipisicing.
+            <div class="media-box-more"> <a href="/ad?cpUid=<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" type="hidden">">Read more</a></div>
+        </div>
+    </div>
+
+    <div class="media-box-footer">by Brand Philander</div>
+
+</div>
+</perch:if>

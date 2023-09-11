@@ -1,0 +1,295 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Hanlding Updates
+-----------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------*/
+/*	01: GENERAL STYLING - DEFAULT
+/*-----------------------------------------------------------------------------------*/
+.cover { object-fit:cover; height:auto; width:100%;}
+.contain { object-fit:contain; height:auto;}
+.img-contain { object-fit:cover; height:auto;}
+.tools-icons {
+    max-width: 50%;
+    height: auto;
+}
+/*
+.img-fluid {
+    max-width: 50%;
+    height: auto;
+}
+*/
+
+a.text-white:hover {
+    color: #fd7e14!important;
+}
+i.text-white:hover {
+    color: #fd7e14!important;
+}
+.toolsbox .tooltiptools {
+    visibility: hidden;
+    width: 100%;
+    /*background-color: #fd7e14;*/
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: 0;
+}
+.langbox .tooltiplang {
+    visibility: hidden;
+    width: 120px;
+    /*background-color: #fd7e14;*/
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left: 0;
+}
+
+.toolsbox:hover .tooltiptools { visibility: visible; }
+.langbox:hover .tooltiplang { visibility: visible; }
+
+.featured-box.toolsbox, .featured-box.langbox {
+    text-align: center;
+}
+.featured-box h3, .featured-box h4 {
+    text-align: center;
+}
+
+/* This gets rid of the white bar at the top of expanded ads */
+#WS-container-604770fad3573 img {
+    display: none;
+}
+/*----------- TYPOGRAPHY --------------*/
+
+/*----------- HOVER --------------*/
+#header .logo:hover, a:hover {
+    color: white;
+}
+
+/*----------- AD PAGE --------------*/
+.adcontent {
+    padding-bottom: 45px;
+}
+#AdiFrame {
+    min-height: 100%;
+    height: 100%;
+}
+.cbp-l-project-container {
+    display: block;
+    background-image: url("/noindex/default/imgs/misc/loader.gif");
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: inset 0 0 1px #444;
+    overflow: hidden;
+}
+.tag-container {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+}
+.cbp-l-project-container.bbl, .tag-container.bbl { width:970px; height:250px;}
+.cbp-l-project-container.hpa, .tag-container.hpa { width:300px; height:600px;}
+.cbp-l-project-container.mpu, .tag-container.mpu { width:300px; height:250px;}
+.cbp-l-project-container.sky, .tag-container.sky { width:160px; height:600px;}
+.cbp-l-project-container.mbl, .tag-container.mbl { width:320px; height:480px;}
+.cbp-l-project-container.mbs, .tag-container.mbs { width:300px; height:50px;}
+
+#iframe-content-direct, #image-iframe-fancybox {
+    border: 2px solid white;
+    padding: 0;
+    height: 600px;
+}
+#web-page {
+    height: 596px;
+    padding: 0;
+}
+/* Position the filters */
+.media-boxes-drop-down {
+    float: right;
+    margin-right: 10px;
+}
+#sort {
+    float: right;
+    margin-right: 0!important;
+}
+.media-boxes-search {
+    float: left;
+}
+
+
+/* == LETS MODIFY SOME COLORS AND STYLE FOR THE DEMO == */
+
+/* hide no more entries button */
+.media-boxes-no-more-entries{
+    display: none;
+}
+
+/* make your own style of the filter */
+.filters-container{
+    margin-bottom: 20px;
+}
+.custom-filter{
+    padding: 0;
+    text-align: right;
+}
+.custom-filter li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 18px;
+    font-size: 12px;
+}
+.custom-filter li a{
+    color: #999;
+    text-decoration: none;
+}
+.custom-filter li a:hover{
+    color: #333;
+}
+.custom-filter li a.selected{
+    color: #e54e53 !important;
+}
+.img-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    pointer-events: none;
+}
+
+
+.media-box-more a, .media-box-view-image a {
+    text-decoration: none !important;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    color: #e54e53;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+/* Set the style of the thumbnail overlay items */
+.media-box-title {
+    color: rgb(51, 51, 51);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    line-height: normal;
+}
+.media-box-date {
+    color: #F2F2F2;
+    font-size: 10px;
+}
+
+/* Remove box shadow and border-radius from the media boxes */
+.media-box-container{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+}
+
+/* thumbnail overlay background */
+.thumbnail-overlay{
+    background-color: rgba(0,0,0, .40);
+
+    -webkit-transition: background-color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-out;
+    -o-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+}
+
+/* hover effect on the thumbnail-overlay */
+.thumbnail-overlay:hover{
+    background-color: rgba(0,0,0, .60) !important;
+}
+
+/* hover effect on the image */
+.media-box-image img{
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -o-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.media-box-image:hover img {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
+
+    -webkit-transform: scale(1.02) translate(-2px);
+    -moz-transform: scale(1.02) translate(-2px);
+    -o-transform: scale(1.02) translate(-2px);
+    -ms-transform: scale(1.02) translate(-2px);
+    transform: scale(1.02) translate(-2px);
+
+}
+
+/* Change alignment in grid 2 */
+#grid2 .thumbnail-overlay>div.aligment>div.aligment{
+    vertical-align: bottom;
+    padding-bottom: 40px;
+}
+
+.thumbnail-overlay .media-box-title{
+    font-size: 16px;
+    color: #fd7e14;
+}
+
+.thumbnail-overlay .media-box-text{
+    font-size: 14px;
+    color: white;
+}
+
+.thumbnail-overlay .media-box-date{
+    font-style: italic;
+    font-size: 12px;
+}
+
+.middlename {
+    display: none;
+}
+.notification_error, .notification_ok {
+    display: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 1);
+    border: 3px double var(--white);
+    font-weight: 400;
+    height: auto;
+    margin: 0 0 9px 0;
+    padding: 30px 15px 10px 15px;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+

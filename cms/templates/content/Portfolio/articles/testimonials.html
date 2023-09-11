@@ -1,0 +1,23 @@
+<perch:if id="cponoff" value="Yes">
+    <div class="item">
+        <div class="bg-dark rounded p-5">
+            <div class="d-flex align-items-center mt-auto mb-4">
+                <perch:if exists="tImg">
+                <img class="img-fluid rounded-circle d-inline-block w-auto" src="<perch:content id="tImg">" alt="<perch:content id="tName">">
+                </perch:if>
+                <p class="ms-3 mb-0"><strong class="d-block text-white fw-600"><perch:content id="tName"></strong> <a class="text-white-50 fw-500" href="<perch:content id="tURL">" target="_blank"><perch:content id="tCompany"></a></p>
+            </div>
+            <p class="text-light mb-4">"<perch:content id="testimonial">"</p>
+            <span class="text-2"> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> </span>
+        </div>
+    </div>
+</perch:if>
+
+<perch:content id="cponoff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="1">
+<perch:content id="tName" type="text" label="Client Name" suppress="true" order="2">
+<perch:content id="tCompany" type="text" label="Company/Business Name" title  suppress="true" order="3">
+<perch:content id="tURL" type="text" label="Company/Business URL" title  suppress="true" order="4">
+<perch:content id="testimonial" type="text" label="Testimonial" size="xxl" textile="true" html="true" suppress="true" order="5">
+<perch:content id="tImg" type="image" label="Client Thumbnail" suppress="true" bucket="clients" order="6">
+
+

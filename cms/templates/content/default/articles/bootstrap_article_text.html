@@ -1,0 +1,19 @@
+<perch:if id="articleonoff" value="1">
+
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+<perch:if exists="textbody">
+    <perch:content id="textbody" markdown editor="markitup" textile="true" html="true">
+</perch:if>
+</div>
+
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Section On/Off (Check for 'On')" value="1" suppress="true" order="1">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-12 col-lg-6" help="col-sm-12 col-lg-6 text-center text-left center mb-4 wow fadeInRightBig" suppress="true" order="2">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="3">
+</perch:group>
+        
+<perch:group label="Text Settings" collapse>
+<perch:content id="textbody" type="textarea" label="Body Text" markdown editor="markitup" textile="true" html="true" suppress="true" order="10"> 
+</perch:group>

@@ -1,0 +1,72 @@
+<perch:if id="articleonoff" value="1">
+
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+    
+    <perch:if exists="linkurl">
+        <a class="<perch:content id="linkclass">" href="<perch:content id="linkurl">" target="<perch:content id="linktarget">" title="<perch:content id="title">">
+    </perch:if>
+        
+        <perch:if exists="image">
+            <img class="<perch:content id="imageclass">" src="<perch:content id="image">" alt="<perch:content id="title">">
+        </perch:if>
+        
+    <perch:if exists="linkurl">    
+        </a>
+    </perch:if>
+    
+    <perch:if exists="title">
+        <<perch:content id="titletype"> class="<perch:content id="titleclass">" style="<perch:content id="titlestyle">"><perch:content id="title"></<perch:content id="titletype">>
+    </perch:if>
+        
+    <perch:if exists="subtitle">
+        <span><perch:content id="subtitle"></span>
+    </perch:if>
+    
+    <div class="hr"></div>
+        
+    <perch:if exists="textbody">
+        <perch:content id="textbody" markdown editor="markitup" textile="true" html="true">
+    </perch:if>
+     
+    <perch:if exists="socialurl">
+    <perch:repeater id="social" label="Social Links">
+        <perch:content id="socialtitle" type="text" label="Social Title" title suppress="true" order="50">
+        <a href="<perch:content id="socialurl" type="text" label="Social Link" suppress="true" order="52">">
+            <i class="<perch:content id="socialicon" type="text" label="Icon" help="https://www.s-ings.com/typicons/ - typcn typcn-social-github-circular team-icon" suppress="true" order="53">"></i>
+        </a>
+    </perch:repeater>
+    </perch:if>
+        
+</div>
+
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Section On/Off (Check for 'On')" value="1" suppress="true" order="1">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-4 col-lg-4 text-center bouncein" help="col-sm-4 col-lg-4 text-center bouncein" suppress="true" order="2">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="3">
+</perch:group>
+    
+<perch:group label="Image Settings" collapse>
+<perch:content id="image" type="image" label="Image" bucket="team" suppress="true" order="10">
+<perch:content id="imageclass" type="text" label="Img Class" default="team-item fgra t" help="team-img fgra t" suppress="true" order="11"> 
+</perch:group>
+    
+<perch:group label="Link Settings" collapse>
+<perch:content id="linkurl" type="text" label="Link" default="#" suppress="true" order="20">
+<perch:content id="linktarget" type="select" label="Link Target" options="_self, _blank, _parent, _top" suppress="true" order="21">
+<perch:content id="linkclass" type="text" label="Link Class" default="scroll btn fadein" help="scroll btn marg-right10 fadein" suppress="true" order="22">
+</perch:group> 
+    
+<perch:group label="Title Settings" collapse>
+<perch:content id="title" type="text" label="Title" title suppress="true" order="31">
+<perch:content id="subtitle" type="text" label="Sub Title" title suppress="true" order="32">
+<perch:content id="titletype" type="select" label="Title Type" default="h5" options=" , h1, h2, h3, h4, h5, h6, p, span" help="h1, h2, h3, h4, h5, h6, p, span" suppress="true" order="33">
+<perch:content id="titleclass" type="text" label="Title Class" default="team-name" help="team-name" suppress="true" order="34">
+<perch:content id="titlestyle" type="text" label="Title Style" suppress="true" order="35">
+</perch:group>
+        
+<perch:group label="Text Settings" collapse>
+<perch:content id="textbody" type="textarea" label="Body Text" markdown editor="markitup" textile="true" html="true" suppress="true" order="40"> 
+</perch:group>
+ 

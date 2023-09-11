@@ -1,0 +1,43 @@
+<perch:if id="seconoff" value="1">
+<section id="<perch:content id="secid">" class="<perch:content id="secclass">" style="<perch:content id="secstyle">">
+    <div class="container">
+        <div class="row">
+            <div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+                <perch:if exists="title">
+                    <<perch:content id="titletype"> class="<perch:content id="titleclass">"><perch:content id="title"> <br><span class="ticker"></span></<perch:content id="titletype">>
+                </perch:if>
+            </div>            
+        </div>
+    </div>
+</section>
+
+
+    <script>
+            $(".ticker").airport([ <perch:content id="tickertext" type="text" label="Body Text" markdown editor="markitup" html="true" order="24"> ]);
+    </script>
+
+          
+
+</perch:if>
+
+
+<perch:group label="Section Settings" collapse>
+<perch:content id="seconoff" type="checkbox" label="Section On/Off (Check for 'On')" value="1" suppress="true" order="1">
+<perch:content id="secid" type="text" label="Section ID" suppress="true" order="2">
+<perch:content id="secclass" type="text" label="Section Class" help="pad90 text-left center" suppress="true" order="3">
+<perch:content id="secstyle" type="text" label="Section Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="4">
+</perch:group>
+    
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-12 col-lg-12" help="col-sm-12 col-lg-12 text-center text-left center mb-4 wow fadeInRightBig" suppress="true" order="10">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="11">
+</perch:group>
+    
+<perch:group label="Ticker Settings" collapse>
+<perch:content id="title" type="text" label="Title" title suppress="true" order="21">
+<perch:content id="titletype" type="select" label="Title Type" options=" , h1, h2, h3, h4, h5, h6, p, span" default="h1" help="h1, h2, h3, h4, h5, h6, p, span" suppress="true" order="22">
+<perch:content id="titleclass" type="text" label="Title Class" default="like fadeinrightbig" help="like fadeinrightbig" suppress="true" order="23">
+<script>
+//$(".ticker").airport([ "creating web sites","to stand out from the crowd","drinking cups of tea" ]);
+</script>
+</perch:group>

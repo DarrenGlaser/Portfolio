@@ -1,0 +1,74 @@
+<perch:before>
+    <!-- CAROUSEL STARTS-->
+    <div id="<perch:content id="fsliderid" type="text" label="Slider ID" order="1">" class="<perch:content id="fsliderclass" type="text" label="Slider Class" default="flexslider" help="flexslider" order="2">">
+    <ul class="slides">
+</perch:before>
+
+<perch:repeater id="fslider" label="Flex Slides" max="30">
+    <perch:content id="fsitemorder" type="select" label="Item Order" options="<perch:template path="content/lists/numbers-1-100.html">" help="pick a number to order by" order="3" divider-before="------------SLIDE------------">
+
+    <li>
+        <div class="details desktop-only">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <perch:if exists="companylogo">
+                        <div class="col-4 d-flex justify-content-end align-items-center">
+                            <div class="company-logo" style="background-image:url(<perch:content id="companylogo" type="image" label="Company Logo" bucket="clients" order="21">);"></div>
+                </div>
+                </perch:if>
+
+                <perch:if exists="authorimg">
+                    <div class="col-4 d-flex justify-content-center">
+                        <div class="author-image" style="background-image:url(<perch:content id="authorimg" type="image" label="Author Image" bucket="clients" order="14">);"></div>
+            </div>
+            </perch:if>
+
+            <perch:if exists="authorjobroles">
+                <div class="col-4 d-flex align-items-center">
+                    <div class="job-roles"><perch:content id="authorjobroles" type="textarea" label="Job Roles" markdown editor="markitup" order="12"></div>
+                </div>
+            </perch:if>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="quote">
+            <div class="container">
+                <div class="row">
+                    <div id="qml" class="quotemarks col-2 d-flex justify-content-end"><span>&#8220;</span></div>
+                    <div class="col-12 col-lg-8"><perch:content id="quote" type="textarea" label="Quote" markdown editor="markitup" textile="true" html="true" order="13"></div>
+                    <div id="qmr" class="quotemarks col-2 d-flex justify-content-start"><span>&#8221;</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-small">
+            <perch:if exists="author">
+                <p>- <perch:content id="author" type="text" label="Author" title order="10"> -</p>
+            </perch:if>
+
+            <perch:if exists="authorjobtitle">
+                <p><perch:content id="authorjobtitle" type="text" label="Job Title" order="11">, <perch:content id="companyname" type="text" label="Company Name" order="20"></p>
+            </perch:if>
+        </div>
+    </li>
+
+</perch:repeater>
+
+<perch:after>
+    </ul>
+    </div>
+    <script>
+        //<![CDATA[
+        $('document').ready(function(){
+            $('#<perch:content id="fsliderid" hidden>').flexslider({
+                animation:      "slide",
+                controlNav:     false,
+                directionNav:   true,
+                autoPlay:       true,
+            });
+        });
+        //]]>
+    </script>
+</perch:after>

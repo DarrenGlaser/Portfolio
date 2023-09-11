@@ -1,0 +1,36 @@
+<perch:if exists="itemonoff">
+<perch:group label="Section" collapse>
+<perch:content id="itemonoff" type="checkbox" label="Section On/Off (Check for 'On')" value="true" suppress="true" checked order="1">
+<section id="<perch:content id="secid" type="text" label="Section ID" order="2">" class="article-section <perch:content id="secclass" type="text" label="Section Class" order="3">" style="<perch:content id="seccss" type="text" label="Section Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" order="4">">
+</perch:group>
+    <div class="container">    
+        <div class="row">
+
+            <perch:group label="Section Title" collapse>
+            <perch:if exists="titletype">
+            <div class="article col-lg-12 mt-0 mb-4">
+                <<perch:content id="titletype" type="select" label="Title Type" options=" , h1, h2, h3, h4, h5, h6, p, span" help="h1, h2, h3, h4, h5, h6, p, span" order="6"> class="sectitle <perch:content id="titleclass" type="text" label="Title Class" help="text-left, center" order="7">" style="<perch:content id="titlestyle" type="text" label="Title Style" order="8">"><perch:content id="sectitle" type="text" label="Section Title" title order="5"></<perch:content id="titletype">>
+            </div>
+            </perch:if>
+            </perch:group>
+
+            <perch:group label="Image" collapse>
+            <perch:if exists="colimg">
+            <div class="article <perch:content id="imgcolclass" type="text" label="Image Column Class" default="col-md-6 pl-5 pr-5" help="order-1 col-md-6 pl-5 pr-5" order="30">">
+                <img src="<perch:content id="colimg" type="image" label="Image" bucket="images" width="800" order="31">" alt="<perch:content type="text" id="alt" label="Description" help="e.g. Photo of MD Lee Henshaw with his best wig on" title order="32">">
+            </div>
+            </perch:if>
+            </perch:group>
+
+            <perch:group label="Text" collapse>
+            <perch:if exists="colbody">
+            <div class="article <perch:content id="bodycolclass" type="text" label="Body Column Class" default="col-md-6 pl-5 pr-5" help="order-2 col-md-6 pl-5 pr-5" order="20">">
+                <perch:content id="colbody" type="textarea" label="Body" bucket="images" html="true" editor="markitup" markdown required imagewidth="800" order="21">
+            </div>
+            </perch:if>
+            </perch:group>
+
+        </div>
+    </div>
+</section>
+</perch:if>

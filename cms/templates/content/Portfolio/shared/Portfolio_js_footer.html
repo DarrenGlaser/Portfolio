@@ -1,0 +1,58 @@
+<!-- JavaScript -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/noindex/Portfolio/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="//kit.fontawesome.com/dcedd02466.js" crossorigin="anonymous"></script>
+
+<script src="/noindex/Portfolio/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/noindex/Portfolio/vendor/jquery.appear/jquery.appear.min.js"></script>
+<script src="/noindex/Portfolio/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/noindex/Portfolio/vendor/jquery.countTo/jquery.countTo.min.js"></script>
+<script src="/noindex/Portfolio/vendor/parallaxie/parallaxie.min.js"></script>
+<script src="/noindex/Portfolio/vendor/typed/typed.min.js"></script>
+<script src="/noindex/Portfolio/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/noindex/Portfolio/vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="/noindex/Portfolio/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/noindex/Portfolio/js/scripts.js"></script>
+
+<!-- Media Boxes JS files -->
+<script src="/noindex/default/plugin/components/Isotope/jquery.isotope.min.js"></script>
+<script src="/noindex/default/plugin/components/imagesLoaded/jquery.imagesLoaded.min.js"></script>
+<script src="/noindex/default/plugin/components/Transit/jquery.transit.min.js"></script>
+<script src="/noindex/default/plugin/components/jQuery Visible/jquery.visible.min.js"></script>
+<script src="/noindex/default/plugin/components/Modernizr/modernizr.custom.min.js"></script>
+<script src="/noindex/default/plugin/components/Fancybox/jquery.fancybox.min.js"></script>
+<script src="/noindex/default/plugin/js/jquery.mediaBoxes.dropdown.js"></script>
+<script src="/noindex/default/plugin/js/jquery.mediaBoxes.js"></script>
+
+<script>
+
+    $('#grid').mediaBoxes({
+        filterContainer: '.filters',
+        search: '#search',
+        //searchTarget: '.thumbnail-overlay',
+        sortContainer: '#sort',
+        getSortData: {
+            title: '.media-box-title',
+            year: '.media-box-year parseInt',
+            author: '.media-box-author'
+        },
+        popup: 'magnificpopup',
+        columns: 3,
+        boxesToLoadStart: 8,
+        boxesToLoad: 6,
+        horizontalSpaceBetweenBoxes: 30,
+        verticalSpaceBetweenBoxes: 30,
+        deepLinkingOnPopup: false,
+        deepLinkingOnFilter: false,
+        animation_on_thumbnail_overlay_hover : [
+            { item : '.fa-plus, .fa-video-camera, .fa-headphones', animation : 'from-left' },
+            { item : '.fa-link', animation : 'from-right' }
+        ],
+    });
+
+</script>
+
+<script type="text/javascript">var userip;</script>
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+<script type="text/javascript">$(".getipadr").val(userip);</script>

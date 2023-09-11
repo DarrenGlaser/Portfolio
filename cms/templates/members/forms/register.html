@@ -1,0 +1,68 @@
+<perch:form id="register" type="default" class="needs-validation" novalidate method="post" app="perch_members" send-welcome="false">
+
+	<div class="form-row">
+        <div class="col-md-6 mb-3">
+		    <perch:label for="first_name">First name <sup class="asterisk"> *</sup></perch:label>
+            <perch:input id="first_name" class="form-control" type="text" name="first_name" label="First Name" placeholder="First Name" value="" required>
+            <div class="valid-feedback">Cool first name!</div>
+            <div class="invalid-feedback">Please enter your first name</div>
+	    </div>
+
+        <div class="col-md-6 mb-3">
+		    <perch:label for="last_name">Last name <sup class="asterisk"> *</sup></perch:label>
+            <perch:input id="last_name" class="form-control" type="text" name="last_name" label="Last Name" placeholder="Last Name" value="" required>
+            <div class="valid-feedback">Hmmm - dodgy last name!</div>
+            <div class="invalid-feedback">Please enter your last name</div>
+	    </div>
+    </div>
+            
+    <perch:input id="middlename" class="middlename" type="text" name="middlename" label="Middle Name" placeholder="Middle Name" value="" antispam="honeypot">
+            
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+		    <perch:label for="number">Mobile number<sup class="asterisk"> *</sup></perch:label>
+            <perch:input id="number" class="form-control" type="tel" name="number" label="Mobile Number" placeholder="Number" value="" required>
+            <perch:error for="number" class="invalid-feedback" type="format"><span class="error" role="alert">Please check the mobile number</span><br /></perch:error>
+            <div class="valid-feedback">Good stuff!</div>
+            <div class="invalid-feedback">Thats not right!</div>
+	    </div>
+            
+        <div class="col-md-6 mb-3">
+            <perch:label for="email">Your email <sup class="asterisk"> *</sup></perch:label>
+            <perch:input id="email" class="form-control" helper="PerchMembers_Members::check_email" type="email" name="email" label="Email" placeholder="you@youremail.com" value="" required>
+		    <perch:error for="email" class="invalid-feedback" type="helper"><span class="error" role="alert">That email address is already in use</span><br /></perch:error>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a valid email address</div>
+        </div>
+	</div>
+
+    <div class="form-row">
+	    <div class="col-md-6 mb-3">
+            <perch:label for="password">Password <sup class="asterisk"> *</sup></perch:label>
+		    <perch:input id="password" class="form-control" type="password" name="password" label="Password" placeholder="Password" match-with="password2" value="" required>
+            <perch:error for="password" class="invalid-feedback" type="match"><span class="error" role="alert">Typo - Passwords must match</span><br /></perch:error>
+            <div class="valid-feedback">Good stinking!</div>
+            <div class="invalid-feedback">Please add a password</div>
+	    </div>
+
+	    <div class="col-md-6 mb-3">
+            <perch:label for="password2">Repete password <sup class="asterisk"> *</sup></perch:label>
+		    <perch:input id="password2" class="form-control" type="password" name="password2" label="Repete password" placeholder="Repete password" required>
+		    <div class="valid-feedback">Well done - it's the same!</div>
+            <div class="invalid-feedback">Please add a password</div>
+	    </div>     
+    </div>
+
+    <perch:input id="getipadr" class="getipadr" type="hidden" required value="">
+    <perch:input id="submit" class="btn btn-primary float-right hover-left" type="submit" value="Register">
+
+    <perch:success>
+        <div class="notification_ok">
+            <h2>Thanks!</h2>
+            <h3>Your request to join Macc Squash Club has been succesfully submitted.</h3>
+            <p>One of us will contact you shortly to verify you're actually a human and not a robot and answer any other questions you may have.</p>
+            <p>Then we'll send you a confirmation email explaining the login procedure.</p>
+        </div>
+    </perch:success>
+
+</perch:form>

@@ -1,0 +1,15 @@
+<perch:if id="lanOnOff" value="Yes">
+    <div class="col-3 col-md-2">
+        <div class="featured-box toolsbox">
+            <h3 class="tooltiptools text-light desktop-only d-none d-sm-block"><perch:content id="lanTitle"></h3>
+            <div class="featured-box-icon">
+                <img class="tools-icons" src="<perch:content id="lanImg">" alt="<perch:content id="lanTitle">" />
+            </div>
+        </div>
+    </div>
+</perch:if>
+
+<perch:content id="lanOnOff" type="select" label="Item On/Off" options="Yes, No" suppress="true" order="1">
+<perch:content id="lanTitle" type="text" label="Language Title" title  suppress="true" order="2">
+<perch:content id="lanURL" type="text" label="Language URL" title  suppress="true" order="3">
+<perch:content id="lanImg" type="image" label="Language Thumbnail" suppress="true" bucket="icons" order="4">

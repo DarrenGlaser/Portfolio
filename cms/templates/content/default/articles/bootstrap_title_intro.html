@@ -1,0 +1,32 @@
+<perch:if id="articleonoff" value="1">
+
+<div class="<perch:content id="bootstrapclass">" style="<perch:content id="bootstrapstyle">">
+<perch:if exists="title">
+    <<perch:content id="titletype"> class="<perch:content id="titleclass">" style="<perch:content id="titlestyle">"><perch:content id="title"></<perch:content id="titletype">>
+</perch:if>
+
+<perch:if exists="intro">
+    <div class="lead <perch:content id="introclass">" data-wow-offset="80" data-wow-duration="2s" style="<perch:content id="introstyle">"><perch:content id="intro" markdown editor="markitup" textile="true" html="true"></div>
+</perch:if>
+</div>
+
+</perch:if>
+
+<perch:group label="Bootstrap Div Settings" collapse>
+<perch:content id="articleonoff" type="checkbox" label="Section On/Off (Check for 'On')" value="1" suppress="true" order="1">
+<perch:content id="bootstrapclass" type="text" label="Bootstrap Class" default="col-sm-12 col-lg-12" help="col-sm-12 col-lg-12 text-center text-left center mb-4 wow fadeInRightBig" suppress="true" order="10">
+<perch:content id="bootstrapstyle" type="text" label="Bootstrap Style" help="CSS - background-color: rgba(236, 237, 244, 1.0);" suppress="true" order="11">
+</perch:group>
+        
+<perch:group label="Title Settings" collapse>
+<perch:content id="title" type="text" label="Title" title suppress="true" order="21">
+<perch:content id="titletype" type="select" label="Title Type" default="h1" options=" , h1, h2, h3, h4, h5, h6, p, span" help="h1, h2, h3, h4, h5, h6, p, span" suppress="true" order="22">
+<perch:content id="titleclass" type="text" label="Title Class" help="text-left center wow fadeInRightBig" suppress="true" order="23">
+<perch:content id="titlestyle" type="text" label="Title Style" suppress="true" order="24">
+</perch:group>
+
+<perch:group label="Intro Settings" collapse>
+<perch:content id="introclass" type="text" label="Intro Class" help="col-sm-12 col-lg-12 text-center mb-4" suppress="true" order="30">
+<perch:content id="introstyle" type="text" label="Intro Style" suppress="true" order="31">
+<perch:content id="intro" type="textarea" label="Intro" markdown editor="markitup" textile="true" html="true" suppress="true" order="32"> 
+</perch:group>

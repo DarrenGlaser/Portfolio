@@ -1,17 +1,41 @@
 <meta property="og:locale" content="en_GB" />
-<meta property="og:type" content="<perch:pages id="og_type" label="Facebook Type" type="select" options="article,book,profile,website,video,music" allowempty>" />
+<perch:if exists="ogTyp">
+<meta property="og:type" content="<perch:pages id="ogTyp" type="hidden">" />
+<perch:else>
+<meta property="og:type" content="<perch:pages id="og_type" label="Share Type" type="select" options="article,book,profile,website,video,music" allowempty>" />
+</perch:if>
+<perch:if exists="cpMtl">
+<meta property="og:title" content="<perch:pages id="cpMtl" type="hidden">" />
+<meta property="og:image:alt" content="<perch:pages id="cpMtl" type="hidden">" />
+<perch:else>
 <meta property="og:title" content="<perch:pages id="og_title" label="Social Title" type="text" escape help="Title for this document with no branding or site name" divider-before="Facebook Open Graph Tags">" />
-<meta property="og:description" content="<perch:pages id="og_description" label="Social description" type="textarea" size="s" escape>" />
+<meta property="og:image:alt" content="<perch:pages id="og_title">" />
+</perch:if>
+<perch:if exists="ogDes">
+<meta property="og:description" content="<perch:pages id="ogDes" type="textarea" type="hidden">" />
+<perch:else>
+<meta property="og:description" content="<perch:pages id="og_description" label="Social Description" type="textarea" size="s">" />
+</perch:if>
 <meta property="og:url" content="<perch:pages id="url" type="hidden" encode="false" replace="%20|-">" />
 <meta property="og:site_name" content="<perch:pages id="sitename" type="hidden">" />
-<perch:if exists="og_image"><meta property="og:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="og_image" label="Image when shared" help="Should be at least 1200x630" type="image" width="1200">" /><perch:else><meta property="og:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="sharing_image" type="hidden">" /></perch:if>
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<perch:if exists="og_datetime"><meta property="og:publish_date" name="publish_date" content="<perch:pages id="og_datetime" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ">" />
-<meta property="article:published_time" name="article-published_time" content="<perch:pages id="og_datetime" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ">" />
-<meta property="article:modified_time" name="article-modified_time" content="<perch:pages id="og_datetime" type="date" time label="Publish Date" format="Y-m-d\TH:i:s\.TZ">" /><perch:else><meta property="og:publish_date" name="publish_date" content="<perch:pages id="article_datetime" time  type="hidden" format="Y-m-d\TH:i:s\.TZ">" />
-<meta property="article:published_time" name="article-published_time" content="<perch:pages id="article_datetime" time  type="hidden" format="Y-m-d\TH:i:s\.TZ">" />
-<meta property="article:modified_time" name="article-modified_time" content="<perch:pages id="article_datetime" time  type="hidden" format="Y-m-d\TH:i:s\.TZ">" /></perch:if>
+<perch:if exists="sharing_image">
+<meta property="og:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="sharing_image" type="hidden">" />
+<perch:else>
+<meta property="og:image" content="<perch:pages id="domain" type="hidden"><perch:pages id="og_image" label="Image when shared" help="Should be at least 1600x900" type="image" width="1600">" />
+</perch:if>
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+
+<perch:if exists="cpCdt">
+    <meta property="og:publish_date" name="publish_date" content="<perch:pages id="cpCdt" type="hidden">" />
+    <meta property="article:published_time" name="article-published_time" content="<perch:pages id="cpCdt" type="hidden">" />
+    <meta property="article:modified_time" name="article-modified_time" content="<perch:pages id="cpDat" type="hidden">" />
+<perch:else>
+    <meta property="og:publish_date" name="publish_date" content="<perch:pages id="article_datetime" time  type="hidden" format="d-m-Y">" />
+    <meta property="article:published_time" name="article-published_time" content="<perch:pages id="article_datetime" time  type="hidden" format="d-m-Y">" />
+    <meta property="article:modified_time" name="article-modified_time" content="<perch:pages id="article_datetime" time  type="hidden" format="d-m-Y">" />
+</perch:if>
+
 <meta property="article:publisher" content="<perch:pages id="facebookurl" type="hidden">" />
 <meta property="article:author" content="<perch:pages id="og_author" label="Article Author" type="text">" />
 

@@ -96,7 +96,7 @@
                     <perch:if exists="sharesites">
                         <perch:categories id="sharesites">
                             <perch:if id="catTitle" match="contains" value="facebook">
-                                <a data-bs-toggle="tooltip" href="" target="_blank" title="" data-bs-original-title="Facebook"><i class="text-white fab fa-facebook-f"></i>&nbsp;</a>&nbsp;
+                                <a data-bs-toggle="tooltip" href="http://www.facebook.com/sharer/sharer.php?u=<perch:content id="slug">" target="_blank" title="" data-bs-original-title="Facebook"><i class="text-white fab fa-facebook-f"></i>&nbsp;</a>&nbsp;
                             </perch:if>
                             <perch:if id="catTitle" match="contains" value="twitter">
                                 <a data-bs-toggle="tooltip" href="%2Fad%3FcpUid%3D3%26<perch:content id="_id" type="hidden">&<perch:content id="ogUrl" encode="false" replace="%20|-" type="hidden">" target="_blank" title="" data-bs-original-title="Twitter"><i class="text-white fab fa-twitter"></i>&nbsp;</a>&nbsp;
@@ -111,6 +111,11 @@
                          data-layout="button_count">
                     </div>
 <!-- Linked In --
+
+        <a href="http://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="share-popup">Share on Facebook</a>
+        <a href="http://www.twitter.com/intent/tweet?url=URL_HERE&via=TWITTER_HANDLE_HERE&text=TITLE_HERE" target="_blank" class="share-popup">Share on Twitter</a>
+        <a href="http://plus.google.com/share?url=URL_HERE" target="_blank" class="share-popup">Share on Googleplus</a>
+
 http://www.linkedin.com/shareArticle?mini=true&url=https://stackoverflow.com/questions/10713542/how-to-make-custom-linkedin-share-button/10737122&title=How%20to%20make%20custom%20linkedin%20share%20button&summary=some%20summary%20if%20you%20want&source=stackoverflow.com
 -->
                 </li>

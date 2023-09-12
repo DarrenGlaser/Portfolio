@@ -1,177 +1,116 @@
-<perch:if id="cpFmt" value="Page">
-	<div class="cbp-l-project-container page">
+<section id="work" class="section bg-dark-1 mt-5">
+	<div class="container">
 
-		<perch:if id="cpTyp" value="ExternalLink">
-			<!-- External Link -->
-			<div id="image-external" class="col-lg-12">
-				<a href="<perch:shop id="ifCont" html type="text">" title="<perch:shop id="cpMtl">" target="_blank">
-				<img class="cover" draggable="false" src="<perch:shop id="cpDimg">">
-				</a>
-			</div>
-		</perch:if>
-
-		<perch:if id="cpTyp" value="FancyboxiFrame">
-			<!-- Fancybox iFrame -->
-			<div id="image-iframe-fancybox" class="col-lg-12">
-				<a class="iframe" data-caption="<perch:shop id="cpMtl">" href="<perch:shop id="ifCont" html type="text">" draggable="false">
-				<img class="cover" draggable="false" src="<perch:shop id="cpDimg">">
-				</a>
-			</div>
-		</perch:if>
-
-		<perch:if id="cpTyp" value="DirectContent">
-			<!-- Direct Content - iFrame -->
-			<div id="iframe-content-direct" class="col-lg-12 border-1">
-				<iframe id="web-page" src="<perch:shop id="ifCont" html type="text">" width="100%" height="100%" allow="autoplay"></iframe>
-			</div>
-		</perch:if>
-
-	</div>
-</perch:if>
-
-<perch:if id="cpFmt" value="BBL">
-	<div class="cbp-l-project-container bbl">
-		<div id="conad" class="tag-container bbl"><perch:shop id="cpTag" html type="text"></div>
-	</div>
-</perch:if>
-
-<perch:if id="cpFmt" value="HPA">
-	<div class="cbp-l-project-container hpa">
-		<div id="conad" class="tag-container hpa"><perch:shop id="cpTag" html type="text"></div>
-	</div>
-</perch:if>
-
-<perch:if id="cpFmt" value="MPU">
-	<div class="cbp-l-project-container mpu">
-		<div id="conad" class="tag-container mpu"><perch:shop id="cpTag" html type="text"></div>
-	</div>
-</perch:if>
-
-<perch:if id="cpFmt" value="SKY">
-	<div class="cbp-l-project-container sky">
-		<div id="conad" class="tag-container sky"><perch:shop id="cpTag" html type="text"></div>
-	</div>
-</perch:if>
-
-<perch:if id="cpFmt" value="MBL">
-	<div class="cbp-l-project-container mbl">
-		<div id="conad" class="tag-container mbl"><perch:shop id="cpTag" html type="text"></div>
-	</div>
-</perch:if>
-
-<perch:if id="cpFmt" value="MBS">
-	<div class="cbp-l-project-container mbs">
-		<div id="conad" class="tag-container mbs"><perch:shop id="cpTag" html type="text"></div>
-	</div>
-</perch:if>
-
-<div class="row gy-5 mt-5">
-	<div class="col-lg-7 col-xl-8 text-center text-lg-start">
-		<h2 class="text-7 text-white fw-600 mb-3"><perch:shop id="cpStl" html type="text"></h2>
-		<div class="text-white-50 project-description"><perch:shop id="cpDes" html type="text"></div>
-	</div>
-	<div class="col-lg-5 col-xl-4">
-		<div class="ps-lg-4">
-			<ul class="list-style-2 list-style-light text-light">
-				<li><span class="fw-600 me-2 text-primary">Client:</span><perch:shop id="brand"></li>
-				<li><span class="fw-600 me-2 text-primary">Created:</span><perch:shop id="cpCdt"></li>
-				<li><span class="fw-600 me-2 text-primary">Content:</span>
-					<perch:categories id="workcontent">
-						<perch:if exists="perch_item_last">
-							<perch:category id="catTitle">
-								<perch:else />
-								<perch:category id="catTitle">,&nbsp;
-						</perch:if>
-					</perch:categories>
-				</li>
-				<li><span class="fw-600 me-2 text-primary">Caregories:</span>
-					<perch:categories id="worksectors">
-						<perch:if exists="perch_item_last">
-							<perch:category id="catTitle">
-								<perch:else />
-								<perch:category id="catTitle">,&nbsp;
-						</perch:if>
-					</perch:categories></li>
-				<li class="border-0"><span class="fw-600 me-2 text-primary">Share On:</span>
-					<perch:if exists="sharesites">
-						<perch:categories id="sharesites">
-							<perch:if id="catTitle" match="contains" value="facebook">
-								<a data-bs-toggle="tooltip" href="" target="_blank" title="" data-bs-original-title="Facebook"><i class="text-white fab fa-facebook-f"></i>&nbsp;</a>&nbsp;
-							</perch:if>
-							<perch:if id="catTitle" match="contains" value="twitter">
-								<a data-bs-toggle="tooltip" href="%2Fad%3FcpUid%3D3%26<perch:shop id="_id" type="hidden">&<perch:shop id="ogUrl" encode="false" replace="%20|-" type="hidden">" target="_blank" title="" data-bs-original-title="Twitter"><i class="text-white fab fa-twitter"></i>&nbsp;</a>&nbsp;
-							</perch:if>
-							<perch:if id="catTitle" match="contains" value="linkedin">
-								<a data-bs-toggle="tooltip" href="https://www.linkedin.com/shareArticle?mini=true&summary=This%20is%20the%20summary%20text&title=Christmas%20Jumper%20Generator&url=https://darrenglaser.co.uk/" target="_blank"><i class="text-white fab fa-linkedin-in"></i>&nbsp;</a>&nbsp;
-							</perch:if>
-						</perch:categories>
-					</perch:if>
-					<div class="fb-share-button"
-						 data-href="/ad?cpUid=<perch:shop id="_id" type="hidden">&<perch:shop id="ogUrl" encode="false" replace="%20|-" type="hidden">"
-						data-layout="button_count">
+		<div class="position-relative d-flex text-center mb-5">
+			<h2 class="text-24 text-muted opacity-1 text-uppercase fw-600 w-100 mb-0">My Work</h2>
+			<p class="text-9 text-white fw-600 position-absolute w-100 align-self-center lh-base mb-0"><perch:shop id="cpMtl"><span class="heading-separator-line border-bottom border-3 border-primary d-block mx-auto"></span> </p>
 		</div>
-		<!-- Linked In --
-        http://www.linkedin.com/shareArticle?mini=true&url=https://stackoverflow.com/questions/10713542/how-to-make-custom-linkedin-share-button/10737122&title=How%20to%20make%20custom%20linkedin%20share%20button&summary=some%20summary%20if%20you%20want&source=stackoverflow.com
-        -->
-		</li>
-		</ul>
-	</div>
-</div>
-</div>
 
-<perch:if id="cpTag" value="silence-media" match="contains">
-	<script type="text/javascript">
-		$('.tag-container').css({
-			marginTop:		'-800px',
-			opacity:		0
-		});
-		$('.tag-container').delay(1600).animate({
-			marginTop:		'0',
-			opacity:		0
-		}, 800, 'easeOutQuint');
+		<div class="row mb-5">
+			<div class="adcontent col-sm-12 col-lg-12">
 
-		$('.tag-container').delay(200).animate({
-			opacity:		1
-		}, 600, 'easeOutQuint');
-	</script>
-</perch:if>
-<perch:if id="cpTag" value="bs.serving-sys.com" match="contains">
-	<script type="text/javascript">
-		$('.tag-container').css({
-			marginTop:		'-800px',
-			opacity:		0
-		});
-		$('.tag-container').delay(1600).animate({
-			marginTop:		'0',
-			opacity:		0
-		}, 800, 'easeOutQuint');
 
-		$('.tag-container').delay(200).animate({
-			opacity:		1
-		}, 600, 'easeOutQuint');
-	</script>
-</perch:if>
-<perch:if id="cpTag" value="google_ad_url" match="contains">
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.tag-container').each(function () {
-				if ($(this).text().match('google_ad_url')) {
-					//alert('Google Ad');
-					var script = document.createElement('script');
-					script.setAttribute('type', 'text/javascript');
-					script.setAttribute('src', '//pagead2.googlesyndication.com/pagead/show_expandable_ads.js');
-					this.appendChild(script);
-				}
-			});
-		});
-	</script>
-</perch:if>
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+			<perch:if id="cpFmt" value="iFrame">
+				<div class="cbp-l-project-container page">
+
+					<perch:if id="cpTyp" value="DirectContent">
+						<div id="iframe-content-direct" class="col-lg-12 border-1">
+							<iframe id="web-page" src="<perch:shop id="cpTag" html type="text">" width="100%" height="100%" allow="autoplay"></iframe>
+						</div>
+					</perch:if>
+
+					<perch:if id="cpTyp" value="FancyboxiFrame">
+						<div id="image-iframe-fancybox" class="col-lg-12">
+							<a class="iframe fbri" data-caption="<perch:shop id="cpMtl">" href="<perch:shop id="cpTag" html type="text">" draggable="false">
+								<img class="cover" draggable="false" src="<perch:shop id="cpDimg">">
+							</a>
+						</div>
+					</perch:if>
+
+					<perch:if id="cpTyp" value="ExternalLink">
+						<div id="image-external" class="col-lg-12">
+							<a class="fbri" href="<perch:shop id="cpTag" html type="text">" title="<perch:shop id="cpMtl">" target="_blank">
+								<img class="cover" draggable="false" src="<perch:shop id="cpDimg">">
+							</a>
+						</div>
+					</perch:if>
+
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="Image">
+				<div class="cbp-l-project-container page">
+					<perch:if id="cpTyp" value="FancyboxiFrame">
+						<div id="image-iframe-fancybox" class="col-lg-12">
+							<a class="fancybox fbri" data-caption="<perch:shop id="cpMtl">" href="<perch:shop id="cpDimg">" draggable="false">
+								<img class="cover" draggable="false" src="<perch:shop id="cpDimg">">
+							</a>
+						</div>
+					</perch:if>
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="BBL">
+				<div class="cbp-l-project-container bbl">
+					<div id="conad" class="tag-container bbl"><perch:shop id="cpTag" html type="text"></div>
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="HPA">
+				<div class="cbp-l-project-container hpa">
+					<div id="conad" class="tag-container hpa"><perch:shop id="cpTag" html type="text"></div>
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="MPU">
+				<div class="cbp-l-project-container mpu">
+					<div id="conad" class="tag-container mpu"><perch:shop id="cpTag" html type="text"></div>
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="SKY">
+				<div class="cbp-l-project-container sky">
+					<div id="conad" class="tag-container sky"><perch:shop id="cpTag" html type="text"></div>
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="MBL">
+				<div class="cbp-l-project-container mbl">
+					<div id="conad" class="tag-container mbl"><perch:shop id="cpTag" html type="text"></div>
+				</div>
+			</perch:if>
+
+			<perch:if id="cpFmt" value="MBS">
+				<div class="cbp-l-project-container mbs">
+					<div id="conad" class="tag-container mbs"><perch:shop id="cpTag" html type="text"></div>
+				</div>
+			</perch:if>
+
+			<div class="row gy-5 mt-5">
+				<div class="col-lg-7 col-xl-8 text-center text-lg-start">
+					<h2 class="text-7 text-white fw-600 mb-3"><perch:shop id="cpStl" html type="text"></h2>
+					<div class="text-white-50 project-description"><perch:shop id="cpDes" html type="text"></div>
+				</div>
+				<div class="col-lg-5 col-xl-4">
+					<div class="ps-lg-4">
+						<ul class="list-style-2 list-style-light text-light">
+							<li><span class="fw-600 me-2 text-primary">Client:</span><perch:shop id="cpClt"></li>
+							<li><span class="fw-600 me-2 text-primary">Created:</span><perch:shop id="cpCdt"></li>
+							<li><span class="fw-600 me-2 text-primary">Caregories:</span>
+								<perch:categories id="sectors">
+									<perch:if exists="perch_item_last">
+										<perch:category id="catTitle">
+											<perch:else />
+											<perch:category id="catTitle">,&nbsp;
+									</perch:if>
+								</perch:categories>
+							</li>
+							<li><span class="fw-600 me-2 text-primary">Features:</span>
+								<perch:categories id="features">
+									<perch:if exists="perch_item_last">
+										<perch:category id="catTitle">
+											<perch:else />
+											<perch:category id="catTitle">,&nbsp;
+									</perch:if>
+								</perch:categories>
+							</li>

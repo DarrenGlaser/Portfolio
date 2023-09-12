@@ -1,22 +1,35 @@
 <?php
 
     $cpMtl = perch_layout_var('cpMtl', true);
-    $cpDat = perch_layout_var('cpDat', true);
+    $cpDat = perch_layout_var('cpDat', true);//Published
+    $cpCdt = perch_layout_var('cpCdt', true);//Created
+    $ogImg = perch_layout_var('ogImg', true);
+    $ogTyp = perch_layout_var('ogTyp', true);
+    $ogDes = perch_layout_var('ogDes', true);
 
     $domain             = 'https://'.$_SERVER["HTTP_HOST"];
     $url                = $domain.$_SERVER["REQUEST_URI"];
     $sitename           = 'Darren Glaser';
     $twittername        = "@DazGlaser";
     $facebookurl        = "//www.facebook.com/dazglaser/";
-    $sharing_image      = '/noindex/imgs/share/socialshare-1920x1040.jpg';
-    $article_datetime   = $cpDat;
+    $sharing_image      = '/noindex/imgs/share/SocialShare_1600x900_Darren01.jpeg';
     $article_author     = 'Darren Glaser';
+    $article_datetime   = $cpDat;
+    $og_title           = $cpMtl;
+    $og_type            = $ogTyp;
 
-    PerchSystem::force_ssl();
+    if (!$ogImg) {
+        $sharing_image   = $sharing_image;
+    } else {
+        $sharing_image  = $ogImg;
+    }
+
     PerchSystem::set_vars([
         'domain'            => $domain,
         'url'               => $url,
         'sitename'          => $sitename,
+        'cpDat'             => $cpDat,
+        'cpCdt'             => $cpCdt,
         'sharing_image'     => $sharing_image,
         'twittername'       => $twittername,
         'facebookurl'       => $facebookurl,
@@ -31,7 +44,7 @@
     }
 
     perch_page_attributes(array(
-        'template' => 'default.html'
+        'template'          => 'default.html',
     ));
     perch_content('Favicons');
     perch_content('Fonts Portfolio');

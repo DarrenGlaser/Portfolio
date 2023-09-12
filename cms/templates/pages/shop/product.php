@@ -11,51 +11,56 @@
         PerchSystem::set_var('theme',$theme);
     } else {$theme = 'default/';}
 
-# set up the variables
-$cpMtl = $post['0']['cpMtl'];
-$cpDvc = $post['0']['cpDvc'];
-$cpFmt = $post['0']['cpFmt'];
-$cpDat = $post['0']['cpDat'];
+    # set up the variables
+    $domain = 'https://'.$_SERVER["HTTP_HOST"];
+    $url    = $domain.$_SERVER["REQUEST_URI"];
 
-$ogTtl = $post['0']['ogTtl'];
-$ogAth = $post['0']['ogAth'];
-$ogTyp = $post['0']['ogTyp'];
-$ogDes = strip_tags($post['0']['ogDes']);
-if (isset($post[0]['ogImg'])) {
-    $ogImg = $post[0]['ogImg'];
-} else {
-    $ogImg = '';
-}
+    $post = perch_shop_products(array(
+        'template'      => 'products/product-details.html',
+        'variants' 		=> true,
+        'skip-template' => 'true',
+        'return-html'   => 'true',
+        'url'           => $url,
+    ));
 
-# use the variables in the array value
-perch_page_attributes_extend(array(
-    'description'    => $ogDes,
-    'og_description' => $ogDes,
-    'og_title'       => $ogTtl,
-    'og_type'        => $ogTyp,
-    'sharing_image'  => $ogImg,
-    'og_author'      => $ogAth,
-));
+    $cpMtl = $post['0']['cpMtl'];
+    $cpDvc = $post['0']['cpDvc'];
+    $cpFmt = $post['0']['cpFmt'];
+    $ogImg = $post['0']['ogImg'];
+    $cpDat = $post['0']['cpDat'];
+    $cpCdt = $post['0']['cpCdt'];
+    $ogTyp = $post['0']['ogTyp'];
+    $ogDes = $post['0']['ogDes'];
 
-$adData = array(
-    'cpMtl'     => $cpMtl,
-    'cpDvc'     => $cpDvc,
-    'cpFmt'     => $cpFmt,
-    'cpDat'     => $cpDat,
-    'detect'    => $detect,
-    'deviceType'=> $deviceType
-);
+    $adData = array(
+        'url'       => $url,
+        'cpMtl'     => $cpMtl,
+        'cpDvc'     => $cpDvc,
+        'cpFmt'     => $cpFmt,
+        'cpDat'     => $cpDat,
+        'cpCdt'     => $cpCdt,
+        'ogTyp'     => $ogTyp,
+        'ogDes'     => $ogDes,
+        'ogImg'     => $ogImg,
+        'detect'    => $detect,
+        'deviceType'=> $deviceType
+    );
 
-PerchSystem::set_vars([
-    'cpMtl'     => $cpMtl,
-    'cpDvc'     => $cpDvc,
-    'cpFmt'     => $cpFmt,
-    'cpDat'     => $cpDat,
-    'detect'    => $detect,
-    'deviceType'=> $deviceType
-]);
+    PerchSystem::set_vars([
+        'url'       => $url,
+        'cpMtl'     => $cpMtl,
+        'cpDvc'     => $cpDvc,
+        'cpFmt'     => $cpFmt,
+        'cpDat'     => $cpDat,
+        'cpCdt'     => $cpCdt,
+        'ogTyp'     => $ogTyp,
+        'ogDes'     => $ogDes,
+        'ogImg'     => $ogImg,
+        'detect'    => $detect,
+        'deviceType'=> $deviceType
+    ]);
 
-    perch_layout( $theme . 'top', ['page_title' => perch_page_title(true),]);
+    perch_layout( $theme . 'top', $adData);
 
 ?>
 
@@ -66,7 +71,7 @@ PerchSystem::set_vars([
 
     <div id="content" role="main">
         <?php
-        perch_layout( $theme . 'shop.product', $adData);
+        perch_layout( 'shop/product', $adData);
         perch_layout( $theme . 'home.contact');
         ?>
     </div>

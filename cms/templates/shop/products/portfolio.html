@@ -1,13 +1,13 @@
 <div class="media-box <perch:if id="cpDvc" value="Desktop">desktop-only</perch:if> <perch:if id="cpDvc" value="Mobile">mobile-only</perch:if> <perch:shop id="cpFmt"> <perch:categories id="workcontent"> <perch:category id="catTitle"> </perch:categories> <perch:categories id="worksectors"> <perch:category id="catTitle"> </perch:categories>" data-columns="<perch:shop id="cpCol">">
 
-    <div class="media-box-image" href="/product/<perch:shop id="_id" type="hidden">">
+    <div class="media-box-image" href="/work/<perch:shop id="_id" type="hidden">">
         <perch:if exists="cpImg">
         <div data-width="<perch:shop id="cpWth">" data-height="<perch:shop id="cpHgt">" data-thumbnail="<perch:shop id="cpImg">"></div>
         <perch:else>
         <div data-width="300" data-height="300" data-thumbnail="noindex/imgs/work/silence-logo.png"></div>
         </perch:if>
 
-        <a class="thumbnail-overlay" href="/product/<perch:shop id="slug" encode="false" replace="%20|-" type="hidden">">
+        <a class="thumbnail-overlay" href="/work/<perch:shop id="slug" encode="false" replace="%20|-" type="hidden">">
             <div class="media-box-title"><perch:shop id="cpMtl"></div>
             <div class="media-box-text"><perch:shop id="cpStl" html="true"></div>
             <!--<a href="/product/<perch:shop id="slug" type="hidden">"><i class="fa fa-link"></i></a>-->

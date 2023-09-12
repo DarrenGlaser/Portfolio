@@ -17,7 +17,7 @@
         <div class="container-fluid position-relative g-lg-4 ml-3 mr-3">
             <div class="col-auto col-lg-2">
                 <!-- Logo -->
-                <a class="logo" href="/" title="Darren Glaser - Portfolio & Resume"> Darren Glaser </a>
+                <a class="logo" href="https://darrenglaser.co.uk" title="Darren Glaser - Portfolio & Resume"> Darren Glaser </a>
                 <!-- Logo End -->
             </div>
             <div class="col col-lg-8 navbar-accordion">
@@ -33,7 +33,7 @@
                         <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
                         <?php
                         perch_pages_navigation(array(
-                            'navgroup'          => 'members',
+                            'navgroup'          => 'visitors',
                             'hide-extensions'   => true,
                             'from-path'         => '/',
                             'levels'            => 1,

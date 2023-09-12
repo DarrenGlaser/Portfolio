@@ -15,6 +15,11 @@
             'web_path'  => '/noindex/imgs/work',
             'file_path' => '/home/sites/28a/7/7fffbc4911/public_html/noindex/imgs/work',
         ],
+        'brands' => [
+            'type'      => 'file',
+            'web_path'  => '/noindex/imgs/brands',
+            'file_path' => '/home/sites/28a/7/7fffbc4911/public_html/noindex/imgs/brands',
+        ],
         'clients' => [
             'type'      => 'file',
             'web_path'  => '/noindex/imgs/clients',
@@ -43,7 +48,7 @@
         'video' => [
             'type'      => 'file',
             'web_path'  => '/noindex/videos',
-            'file_path' => '/home/sites/28a/7/7fffbc4911/public_html/noindex/imgs/videos',
+            'file_path' => '/home/sites/28a/7/7fffbc4911/public_html/noindex/videos',
         ],
         'news' => [
             'type'      => 'file',

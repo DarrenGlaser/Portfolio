@@ -40,7 +40,7 @@ i.text-white:hover {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    top: 80%;
+    top: 70%;
     left: 0;
 }
 .langbox .tooltiplang {
@@ -55,18 +55,20 @@ i.text-white:hover {
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
-    top: 80%;
+    top: 70%;
     left: 0;
 }
 
 .toolsbox:hover .tooltiptools { visibility: visible; }
 .langbox:hover .tooltiplang { visibility: visible; }
 
-.featured-box.toolsbox, .featured-box.langbox {
+h3.tooltiptools {
     text-align: center;
 }
-.featured-box h3, .featured-box h4 {
+.featured-box-icon {
     text-align: center;
+    width: 100%;
+    height: auto;
 }
 
 /* This gets rid of the white bar at the top of expanded ads */
@@ -109,13 +111,19 @@ i.text-white:hover {
 .cbp-l-project-container.mbl, .tag-container.mbl { width:320px; height:480px;}
 .cbp-l-project-container.mbs, .tag-container.mbs { width:300px; height:50px;}
 
-#iframe-content-direct, #image-iframe-fancybox {
+#iframe-content-direct {
     border: 2px solid white;
     padding: 0;
-    height: 600px;
+    height: 700px;
+}
+#image-iframe-fancybox {
+    border: 2px solid white;
+    padding: 0;
+    width: 100%;
+    height: auto;
 }
 #web-page {
-    height: 596px;
+    height: 100%;
     padding: 0;
 }
 /* Position the filters */
@@ -291,5 +299,11 @@ i.text-white:hover {
     text-align: center;
     font-size: 13px;
     text-transform: uppercase;
+}
+
+.fbri:hover, .fbri:active, .fbri:focus {
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
+    cursor: pointer;
 }
 
